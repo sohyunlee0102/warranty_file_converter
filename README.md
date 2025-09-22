@@ -1,20 +1,46 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# Warranty Converter Script
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+Small Python utility to convert and normalize warranty data into standard formats.
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+## Project layout
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+- `pyproject.toml` - project metadata and build
+- `requirements.txt` - pinned runtime dependencies
+- `src/` - application source code (use `src/` layout to avoid import issues)
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+## Quick start
+
+1. Create a virtual environment and activate it (Windows PowerShell):
+
+```powershell
+python -m venv .venv; .\.venv\Scripts\Activate.ps1
+```
+
+2. Install dependencies:
+
+```powershell
+pip install -r requirements.txt
+```
+
+3. Copy `.env.example` to `.env` and adjust values as needed.
+
+```powershell
+Copy-Item .env.example .env
+```
+
+## Development
+
+- Formatting: `black`
+- Imports: `isort`
+- Type checking: `mypy`
+
+Install pre-commit hooks:
+
+```powershell
+pip install pre-commit; pre-commit install
+```
+
+## Next steps
+
+- Add tests mirroring `src/` structure.
+- Optionally add CLI entrypoint in `pyproject.toml` or `console_scripts`.

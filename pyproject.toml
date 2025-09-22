@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "warranty-converter-script"
+version = "0.0.1"
+description = "Small utility to convert warranty data into standardized formats (scaffold)."
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [ {name = "Harold Torrado"}, {name = "Sohyun Lee"} ]
+
+dependencies = [
+    "python-dotenv>=1.0.0",
+]
+
+[tool.black]
+line-length = 88
+
+[tool.isort]
+profile = "black"
