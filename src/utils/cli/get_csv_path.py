@@ -14,6 +14,5 @@ def getCsvPath() -> str:
 
 
 def promptCsvPath() -> str:
-    print("")
-    RAW_PATH = input("Please provide the path to the CSV file:")
+    RAW_PATH = input("\nPlease provide the path to the CSV file:")
     return RAW_PATH

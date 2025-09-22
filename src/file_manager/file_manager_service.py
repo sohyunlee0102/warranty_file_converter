@@ -21,6 +21,5 @@ class FileManagerService:
 
     def getCsvData(self, csvPath: str) -> pd.DataFrame:
         data = pd.read_csv(csvPath)
-        data = data.fillna("")
 
         return data

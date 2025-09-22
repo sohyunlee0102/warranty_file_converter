@@ -13,12 +13,12 @@ def getDriverModel() -> ECatlBatteryModels:
             ECatlBatteryModels(int(driverModel))
             isValidModel = True
         except ValueError:
-            print("❌ Invalid option. Please choose a valid driver model.\n")
+            print("❌ Invalid option. Please choose a valid driver model.")
     return ECatlBatteryModels(int(driverModel))
 
 
 def promptDriverModel() -> str:
-    print("Please provide the driver model:")
+    print("\nPlease provide the driver model:")
 
     for model in ECatlBatteryModels:
         print(f"\t {model.value}. {model.name}")
