@@ -18,7 +18,7 @@ def getDriverModel() -> ECatlBatteryModels:
 
 
 def promptDriverModel() -> str:
-    print("\nPlease provide the driver model:")
+    print("\nPlease provide the driver model: ")
 
     for model in ECatlBatteryModels:
         print(f"\t {model.value}. {model.name}")
