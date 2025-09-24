@@ -1,0 +1,686 @@
+{
+    "timeMaxIntervalInSeconds": 6,
+    "MBMU": {
+        "DATE": {
+            "required": true,
+            "targetColumn": "Date timestamp",
+            "offset": 0,
+            "conversionFactor": 1
+        },
+        "MbusComm": {
+            "targetColumn": "Modbus communication state",
+            "offset": 0,
+            "conversionFactor": 1
+        },
+        "0": {
+            "required": true,
+            "targetColumn": "System warning (with degrees)",
+            "alarmBitLength": 2,
+            "alarmMap": {
+                "0": {
+                    "0": "normal",
+                    "1": "Single cell over-voltage warning1",
+                    "2": "Single cell over-voltage warning2",
+                    "3": "Single cell over-voltage warning3"
+                },
+                "2": {
+                    "0": "normal",
+                    "1": "Single cell under voltage warning1",
+                    "2": "Single cell under voltage warning2",
+                    "3": "Single cell under voltage warning3"
+                },
+                "4": {
+                    "0": "normal",
+                    "1": "Single cell over-temperature warning1",
+                    "2": "Single cell over-temperature warning2",
+                    "3": "Single cell over-temperature warning3"
+                },
+                "6": {
+                    "0": "normal",
+                    "1": "Single cell under temperature warning1",
+                    "2": "Single cell under temperature warning2",
+                    "3": "Single cell under temperature warning3"
+                },
+                "8": {
+                    "0": "normal",
+                    "1": "SOC low warning1",
+                    "2": "SOC low warning2",
+                    "3": "SOC low warning3"
+                },
+                "10": {
+                    "0": "normal",
+                    "1": "Isolation resistance warning1",
+                    "2": "Isolation resistance warning2",
+                    "3": "Isolation resistance warning3"
+                }
+            }
+        },
+        "1": {
+            "required": true,
+            "targetColumn": "System warning (without degrees) 1",
+            "alarmBitLength": 1,
+            "alarmMap": {
+                "0": {
+                    "0": "normal",
+                    "1": "Current over limit warning"
+                },
+                "1": {
+                    "0": "normal",
+                    "1": "Warning for big voltage difference of single cell"
+                },
+                "2": {
+                    "0": "normal",
+                    "1": "Warning for big temperature difference within bank"
+                },
+                "3": {
+                    "0": "normal",
+                    "1": "System over-voltage warning"
+                },
+                "4": {
+                    "0": "normal",
+                    "1": "System under voltage warning"
+                },
+                "5": {
+                    "0": "normal",
+                    "1": "Inner communication fault warning"
+                },
+                "6": {
+                    "0": "normal",
+                    "1": "Cell extreme temperature warning"
+                },
+                "7": {
+                    "0": "normal",
+                    "1": "Cell extreme voltage warning"
+                },
+                "8": {
+                    "0": "normal",
+                    "1": "EMS heartbeat fault"
+                }
+            }
+        },
+        "2": {
+            "targetColumn": "System warning (without degrees) 2",
+            "alarmBitLength": 1,
+            "alarmMap": {}
+        },
+        "3": {
+            "targetColumn": "System warning (without degrees) 3",
+            "alarmBitLength": 1,
+            "alarmMap": {}
+        },
+        "10": {
+            "required": true,
+            "targetColumn": "System status (0-5)",
+            "offset": 0,
+            "conversionFactor": 1
+        },
+        "20": {
+            "required": true,
+            "targetColumn": "Battery system level voltage(outer-side)",
+            "offset": 0,
+            "conversionFactor": 0.1
+        },
+        "21": {
+            "required": true,
+            "targetColumn": "Battery system current Charge/discharge current",
+            "offset": -20000,
+            "conversionFactor": 1
+        },
+        "22": {
+            "required": true,
+            "targetColumn": "Battery system current SOC data",
+            "offset": 0,
+            "conversionFactor": 0.1
+        },
+        "23": {
+            "required": true,
+            "targetColumn": "Battery system current SOH data",
+            "offset": 0,
+            "conversionFactor": 0.1
+        },
+        "24": {
+            "required": true,
+            "targetColumn": "Battery system current maximum cell voltage",
+            "offset": 0,
+            "conversionFactor": 0.001
+        },
+        "25": {
+            "required": true,
+            "targetColumn": "Battery system current minimum cell voltage",
+            "offset": 0,
+            "conversionFactor": 0.001
+        },
+        "26": {
+            "targetColumn": "Battery system current average cell voltage",
+            "offset": 0,
+            "conversionFactor": 0.001
+        },
+        "27": {
+            "required": true,
+            "targetColumn": "Battery system current maximum cell temperature",
+            "offset": -50,
+            "conversionFactor": 1
+        },
+        "28": {
+            "required": true,
+            "targetColumn": "Battery system current minimum cell temperature",
+            "offset": -50,
+            "conversionFactor": 1
+        },
+        "29": {
+            "targetColumn": "Battery system current average cell temperature",
+            "offset": -50,
+            "conversionFactor": 1
+        },
+        "2A": {
+            "required": true,
+            "targetColumn": "Battery system current allowed maximum charge current",
+            "offset": -20000,
+            "conversionFactor": 1
+        },
+        "2B": {
+            "required": true,
+            "targetColumn": "Battery system current allowed maximum discharge current",
+            "offset": -20000,
+            "conversionFactor": 1
+        },
+        "300": {
+            "required": true,
+            "targetColumn": "BMS heartbeats 0-255, updated every 1s",
+            "offset": 0,
+            "conversionFactor": 1
+        },
+        "301": {
+            "required": false,
+            "targetColumn": "BMS_power_on (0-3)",
+            "offset": 0,
+            "conversionFactor": 1
+        },
+        "302": {
+            "required": false,
+            "targetColumn": "BMS_status (0-5)",
+            "offset": 0,
+            "conversionFactor": 1
+        },
+        "304": {
+            "required": true,
+            "targetColumn": "Number of HV connected subsystems",
+            "offset": 0,
+            "conversionFactor": 1
+        },
+        "307": {
+            "required": false,
+            "targetColumn": "System remain charge energy",
+            "offset": 0,
+            "conversionFactor": 0.1
+        },
+        "308": {
+            "required": false,
+            "targetColumn": "System remain discharge energy",
+            "offset": 0,
+            "conversionFactor": 0.1
+        },
+        "380": {
+            "required": false,
+            "targetColumn": "EMS heartbeat",
+            "offset": 0,
+            "conversionFactor": 1
+        },
+        "381": {
+            "required": false,
+            "targetColumn": "EMS cmd (0-3)",
+            "offset": 0,
+            "conversionFactor": 1
+        },
+        "382": {
+            "required": false,
+            "targetColumn": "EMS status (reserved)",
+            "offset": 0,
+            "conversionFactor": 1
+        },
+        "384": {
+            "targetColumn": "EMS RTC year",
+            "offset": 0,
+            "conversionFactor": 1
+        },
+        "385": {
+            "targetColumn": "EMS RTC month",
+            "offset": 0,
+            "conversionFactor": 1
+        },
+        "386": {
+            "targetColumn": "EMS RTC day",
+            "offset": 0,
+            "conversionFactor": 1
+        },
+        "387": {
+            "targetColumn": "EMS RTC hour",
+            "offset": 0,
+            "conversionFactor": 1
+        },
+        "388": {
+            "targetColumn": "EMS RTC minute",
+            "offset": 0,
+            "conversionFactor": 1
+        },
+        "389": {
+            "targetColumn": "EMS RTC second",
+            "offset": 0,
+            "conversionFactor": 1
+        }
+    },
+    "SBMU": {
+        "400": {
+            "required": true,
+            "targetColumn": "Warnings with degrees (bitwise) SBMU",
+            "alarmBitLength": 2,
+            "alarmMap": {
+                "0": {
+                    "0": "normal",
+                    "1": "Single cell over-voltage warning1",
+                    "2": "Single cell over-voltage warning2",
+                    "3": "Single cell over-voltage warning3"
+                },
+                "2": {
+                    "0": "Normal",
+                    "1": "Single cell under voltage warning1",
+                    "2": "Single cell under voltage warning2",
+                    "3": "Single cell under voltage warning3"
+                },
+                "4": {
+                    "0": "Normal",
+                    "1": "Single cell over temperature warning1",
+                    "2": "Single cell over temperature warning2",
+                    "3": "Single cell over temperature warning3"
+                },
+                "6": {
+                    "0": "Normal",
+                    "1": "Single cell under temperature warning1",
+                    "2": "Single cell under temperature warning2",
+                    "3": "Single cell under temperature warning3"
+                },
+                "8": {
+                    "0": "Normal",
+                    "1": "SOC low warning1",
+                    "2": "SOC low warning2",
+                    "3": "SOC low warning3"
+                },
+                "10": {
+                    "0": "Normal",
+                    "1": "TMS fault level 1",
+                    "2": "TMS fault level 2",
+                    "3": "TMS fault level 3"
+                }
+            }
+        },
+        "401": {
+            "required": true,
+            "targetColumn": "Warnings without degrees 1 (bitwise) SBMU",
+            "alarmMap": {
+                "0": {
+                    "0": "normal",
+                    "1": "Charge over-current warning"
+                },
+                "1": {
+                    "0": "normal",
+                    "1": "Discharge over-current warning"
+                },
+                "2": {
+                    "0": "normal",
+                    "1": "Cell voltage difference warning"
+                },
+                "3": {
+                    "0": "normal",
+                    "1": "Temperature difference warning"
+                },
+                "4": {
+                    "0": "normal",
+                    "1": "Cell extreme temperature fault"
+                },
+                "5": {
+                    "0": "normal",
+                    "1": "Cell extreme voltage fault"
+                },
+                "6": {
+                    "0": "normal",
+                    "1": "Rack total voltage warning"
+                },
+                "7": {
+                    "0": "normal",
+                    "1": "Main positive relay close fail fault"
+                },
+                "8": {
+                    "0": "normal",
+                    "1": "Main negative relay close fail fault"
+                },
+                "9": {
+                    "0": "normal",
+                    "1": "Main positive relay stuck fault"
+                },
+                "10": {
+                    "0": "normal",
+                    "1": "Main negative stuck fault"
+                },
+                "11": {
+                    "0": "normal",
+                    "1": "Auxiliary power fault"
+                },
+                "12": {
+                    "0": "normal",
+                    "1": "Balance warning"
+                },
+                "13": {
+                    "0": "normal",
+                    "1": "MCU self-check fault"
+                },
+                "15": {
+                    "0": "normal",
+                    "1": "Inner communication fault(CCAN)"
+                }
+            }
+        },
+        "402": {
+            "required": true,
+            "targetColumn": "Warnings without degrees 2 (bitwise) SBMU",
+            "alarmMap": {
+                "0": {
+                    "0": "normal",
+                    "1": "Inner communication fault(SCAN)"
+                },
+                "2": {
+                    "0": "normal",
+                    "1": "Current sensor abnormal fault"
+                },
+                "3": {
+                    "0": "normal",
+                    "1": "Single cell voltage sampling abnormal fault"
+                },
+                "4": {
+                    "0": "normal",
+                    "1": "Module temperature sampling abnormal fault"
+                },
+                "5": {
+                    "0": "normal",
+                    "1": "High voltage circuit open fault"
+                },
+                "6": {
+                    "0": "normal",
+                    "1": "MSD fault"
+                },
+                "7": {
+                    "0": "normal",
+                    "1": "Rack isolate switch fault"
+                },
+                "8": {
+                    "0": "normal",
+                    "1": "Rack fuse fault"
+                },
+                "9": {
+                    "0": "normal",
+                    "1": "Pre-charge Timeout fault"
+                },
+                "10": {
+                    "0": "normal",
+                    "1": "Extreme over current fault"
+                },
+                "11": {
+                    "0": "normal",
+                    "1": "Contactor coil abnormal warning"
+                },
+                "12": {
+                    "0": "normal",
+                    "1": "The warning of different voltage between sampling voltage and sum voltage warning"
+                },
+                "13": {
+                    "0": "normal",
+                    "1": "MCAN communication warning"
+                },
+                "14": {
+                    "0": "normal",
+                    "1": "CSC Power Fault"
+                },
+                "15": {
+                    "0": "normal",
+                    "1": "Current sensor Power Fault"
+                }
+            }
+        },
+        "403": {
+            "required": true,
+            "targetColumn": "Warnings without degrees 3 (bitwise) SBMU",
+            "alarmMap": {
+                "0": {
+                    "0": "normal",
+                    "1": "TMS communication fault"
+                },
+                "1": {
+                    "0": "normal",
+                    "1": "TMS mode conflict fault"
+                },
+                "2": {
+                    "0": "normal",
+                    "1": "Fire fault level 1"
+                },
+                "3": {
+                    "0": "normal",
+                    "1": "Fire fault level 2"
+                },
+                "6": {
+                    "0": "normal",
+                    "1": "Aerosol state"
+                },
+                "7": {
+                    "0": "normal",
+                    "1": "Aerosol close fault"
+                },
+                "8": {
+                    "0": "normal",
+                    "1": "Aerosol open fault"
+                },
+                "9": {
+                    "0": "normal",
+                    "1": "Rack switch state"
+                },
+                "10": {
+                    "0": "normal",
+                    "1": "Over temperature fault in control box"
+                },
+                "11": {
+                    "0": "normal",
+                    "1": "TMS Make BMS Stop"
+                }
+            }
+        },
+        "410": {
+            "targetColumn": "Pre-charge relay status (open 0/close 1) SBMU",
+            "offset": 0,
+            "conversionFactor": 1
+        },
+        "411": {
+            "required": true,
+            "targetColumn": "Master status positive relay (open 0/close 1) SBMU",
+            "offset": 0,
+            "conversionFactor": 1
+        },
+        "412": {
+            "required": true,
+            "targetColumn": "Master status negative relay (open 0/close 1) SBMU",
+            "offset": 0,
+            "conversionFactor": 1
+        },
+        "414": {
+            "required": true,
+            "targetColumn": "Balance status (not run 0/run 1) SBMU",
+            "offset": 0,
+            "conversionFactor": 1
+        },
+        "420": {
+            "required": true,
+            "targetColumn": "Battery subsystem dc outer side voltage SBMU",
+            "offset": 0,
+            "conversionFactor": 0.1
+        },
+        "422": {
+            "required": true,
+            "targetColumn": "Battery subsystem current charge/discharge current SBMU",
+            "offset": -2000,
+            "conversionFactor": 0.1
+        },
+        "423": {
+            "required": true,
+            "targetColumn": "Battery system current SOC SBMU",
+            "offset": 0,
+            "conversionFactor": 0.1
+        },
+        "424": {
+            "required": true,
+            "targetColumn": "Battery system current SOH SBMU",
+            "offset": 0,
+            "conversionFactor": 0.1
+        },
+        "425": {
+            "required": true,
+            "targetColumn": "Battery system current maximum single cell voltage SBMU",
+            "offset": 0,
+            "conversionFactor": 0.001
+        },
+        "426": {
+            "required": true,
+            "targetColumn": "Battery system current minimum single cell voltage SBMU",
+            "offset": 0,
+            "conversionFactor": 0.001
+        },
+        "427": {
+            "targetColumn": "Battery system current average cell voltage SBMU",
+            "offset": 0,
+            "conversionFactor": 0.001
+        },
+        "428": {
+            "required": true,
+            "targetColumn": "Battery system current maximum temperature SBMU",
+            "offset": -50,
+            "conversionFactor": 1
+        },
+        "429": {
+            "required": true,
+            "targetColumn": "Battery system current minimum temperature SBMU",
+            "offset": -50,
+            "conversionFactor": 1
+        },
+        "42A": {
+            "targetColumn": "Battery system current average temperature SBMU",
+            "offset": -50,
+            "conversionFactor": 1
+        },
+        "42B": {
+            "required": true,
+            "targetColumn": "Battery system current maximum allowed charge current SBMU",
+            "offset": -2000,
+            "conversionFactor": 0.1
+        },
+        "42C": {
+            "required": true,
+            "targetColumn": "Battery system current maximum allowed discharge current SBMU",
+            "offset": -2000,
+            "conversionFactor": 0.1
+        },
+        "430": {
+            "targetColumn": "Max single cell voltage position (LB: Cell# HB: Tank#) SBMU",
+            "offset": 0,
+            "conversionFactor": 1
+        },
+        "431": {
+            "targetColumn": "Min single cell voltage position (LB: Cell# HB: Tank#) SBMU",
+            "offset": 0,
+            "conversionFactor": 1
+        },
+        "432": {
+            "targetColumn": "Max single cell temperature position (module number) SBMU",
+            "offset": 0,
+            "conversionFactor": 1
+        },
+        "433": {
+            "targetColumn": "Min single cell temperature position (module number) SBMU",
+            "offset": 0,
+            "conversionFactor": 1
+        },
+        "437": {
+            "required": true,
+            "targetColumn": "Sum of cell voltage SBMU",
+            "offset": 0,
+            "conversionFactor": 0.001
+        },
+        "448": {
+            "required": true,
+            "targetColumn": "TMS mode command by BMS SBMU",
+            "offset": 0,
+            "conversionFactor": 1
+        },
+        "449": {
+            "required": true,
+            "targetColumn": "TMS temperature value set by BMS SBMU",
+            "offset": -50,
+            "conversionFactor": 1
+        },
+        "44A": {
+            "required": true,
+            "targetColumn": "TMS real mode SBMU",
+            "offset": 0,
+            "conversionFactor": 1
+        },
+        "44B": {
+            "required": true,
+            "targetColumn": "Rack inlet(TMS outlet) temperature SBMU",
+            "offset": -50,
+            "conversionFactor": 1
+        },
+        "44C": {
+            "required": true,
+            "targetColumn": "Rack outlet(TMS intlet) temperature SBMU",
+            "offset": -50,
+            "conversionFactor": 1
+        },
+        "44D": {
+            "required": true,
+            "targetColumn": "TMS Environment temperature SBMU",
+            "offset": -50,
+            "conversionFactor": 1
+        },
+        "44E": {
+            "required": true,
+            "targetColumn": "TMS demand power SBMU",
+            "offset": 0,
+            "conversionFactor": 1
+        },
+        "44F": {
+            "required": true,
+            "targetColumn": "TMS fault code SBMU",
+            "offset": 0,
+            "conversionFactor": 1
+        },
+        "450": {
+            "required": true,
+            "targetColumn": "Door state (close 0/open 1) SBMU",
+            "offset": 0,
+            "conversionFactor": 1
+        },
+        "451": {
+            "required": true,
+            "targetColumn": "Fan state in control box (stop 0 /run 1) SBMU",
+            "offset": 0,
+            "conversionFactor": 1
+        },
+        "454": {
+            "required": true,
+            "targetColumn": "Historical accumulated charging energy SBMU",
+            "offset": 0,
+            "conversionFactor": 0.1
+        },
+        "456": {
+            "required": true,
+            "targetColumn": "Historical accumulated discharging energy SBMU",
+            "offset": 0,
+            "conversionFactor": 0.1
+        }
+    }
+}
