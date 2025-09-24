@@ -2,6 +2,8 @@ import re
 
 import pandas as pd
 
+from utils.catl_sbmu_offset_register_const import CATL_OFFSET_REGISTER
+
 
 def getNumberOfStrings(data: pd.DataFrame) -> int:
     lastColumn = data.columns[-1:].values[0]
@@ -13,5 +15,5 @@ def getNumberOfStrings(data: pd.DataFrame) -> int:
     hex_value = match.group(1)
     number = int(hex_value, 16)
 
-    numberOfString = number / 0x400
+    numberOfString = number / CATL_OFFSET_REGISTER
     return int(numberOfString)
