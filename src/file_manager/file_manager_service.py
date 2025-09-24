@@ -4,20 +4,20 @@ import pandas as pd
 
 
 class FileManagerService:
-    def validatePath(self, file_path: str) -> bool:
-        if not os.path.exists(file_path):
-            print(f"❌ Path does not exist: {file_path}")
+    def validatePath(self, filePath: str) -> bool:
+        if not os.path.exists(filePath):
+            print(f"❌ Path does not exist: {filePath}")
             return False
-        if not os.path.isfile(file_path):
-            print(f"❌ Not a file: {file_path}")
+        if not os.path.isfile(filePath):
+            print(f"❌ Not a file: {filePath}")
             return False
-        if not os.access(file_path, os.R_OK):
-            print(f"❌ Cannot read file (permission denied): {file_path}")
+        if not os.access(filePath, os.R_OK):
+            print(f"❌ Cannot read file (permission denied): {filePath}")
             return False
         return True
 
-    def getFileName(self, file_path: str) -> str:
-        return os.path.basename(file_path)
+    def getFileName(self, filePath: str) -> str:
+        return os.path.basename(filePath)
 
     def getCsvData(self, csvPath: str) -> pd.DataFrame:
         data = pd.read_csv(csvPath)

@@ -10,8 +10,8 @@ def getNumberOfStrings(data: pd.DataFrame) -> int:
     if not match:
         raise ValueError(f"❌ Invalid format for the last column: {lastColumn}")
 
-    hex_value = match.group(1)
-    number = int(hex_value, 16)
+    hexValue = match.group(1)
+    number = int(hexValue, 16)
 
     numberOfString = number / 0x400
     return int(numberOfString)
