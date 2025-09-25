@@ -601,7 +601,7 @@
             "conversionFactor": 1
         },
         "437": {
-            "required": true,
+            "required": false,
             "targetColumn": "Sum of cell voltage SBMU",
             "offset": 0,
             "conversionFactor": 0.001
