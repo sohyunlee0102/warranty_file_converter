@@ -33,7 +33,7 @@ def processCsvFile():
         requiredHeaders,
         csvData,
         numberOfStrings,
-        driverConfig["timeMaxIntervalInSeconds"],
+        driverConfig.timeMaxIntervalInSeconds,
     )
     fileValidatorInstance.validate(csvPath)
 
