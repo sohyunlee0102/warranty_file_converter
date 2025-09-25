@@ -2,6 +2,8 @@ import re
 
 import pandas as pd
 
+from utils.catl_sbmu_offset_register_const import CATL_OFFSET_REGISTER
+
 
 class CsvValidatorService:
     def __init__(
@@ -56,7 +58,7 @@ class CsvValidatorService:
         if len(self.driverRequiredHeaders["SBMU"]) > 0:
             for stringIndex in range(0, self.numberOfStrings):
                 stringHeaders = [
-                    f"{int(header, 16) + (stringIndex * 0x400):X}"
+                    f"{int(header, 16) + (stringIndex * CATL_OFFSET_REGISTER):X}"
                     for header in self.driverRequiredHeaders["SBMU"]
                 ]
                 requiredHeaders.extend(stringHeaders)
