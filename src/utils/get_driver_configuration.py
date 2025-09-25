@@ -11,24 +11,30 @@ from utils.driver_config_path_const import DRIVER_CONFIG_PATHS
 
 
 def _buildRegisterDescription(value: dict) -> RegisterDescriptionDto:
+    targetColumn = value.get("targetColumn", "")
+    if not targetColumn:
+        raise ValueError(
+            "Target column description not found in the register information"
+        )
+
     if "alarmBitLength" in value or "alarmMap" in value:
         return AlarmRegisterDescriptionDto(
             required=value.get("required", False),
-            targetColumn=value.get("targetColumn", ""),
-            alarmBitLength=value.get("alarmBitLength", 0),
+            targetColumn=targetColumn,
+            alarmBitLength=value.get("alarmBitLength", 1),
             alarmMap=value.get("alarmMap", {}),
         )
     if "offset" in value or "conversionFactor" in value:
         return ValueRegisterDescriptionDto(
             required=value.get("required", False),
-            targetColumn=value.get("targetColumn", ""),
+            targetColumn=targetColumn,
             offset=value.get("offset", 0),
             conversionFactor=value.get("conversionFactor", 1.0),
         )
 
     return RegisterDescriptionDto(
         required=value.get("required", False),
-        targetColumn=value.get("targetColumn", ""),
+        targetColumn=targetColumn,
     )
 
 
