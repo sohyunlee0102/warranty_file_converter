@@ -8,36 +8,36 @@ import pandas as pd
 class AlarmTranslatorService:
     def __init__(
         self,
-        alarmColumnRegisters: pd.Series[str],
-        alarmBitLength: int,
-        alarmMap: Dict[str, Dict[str, str]],
-        separator: str = "\n",
+        columnSeries: pd.Series[str],
+        groupBitLength: int,
+        definitionMap: Dict[str, Dict[str, str]],
+        separatorToken: str = "\n",
     ):
-        self.alarmColumnRegisters = alarmColumnRegisters
-        self.alarmBitLength = alarmBitLength
-        self.alarmMap = alarmMap
-        self.separator = separator
+        self.columnSeries = columnSeries
+        self.groupBitLength = groupBitLength
+        self.definitionMap = definitionMap
+        self.separatorToken = separatorToken
 
-    def translateAlarmColumn(self) -> pd.Series[str]:
-        if self.alarmBitLength <= 0:
+    def translateColumn(self) -> pd.Series[str]:
+        if self.groupBitLength <= 0:
             raise ValueError("alarmBitLength must be positive")
 
-        results = self.alarmColumnRegisters.apply(
-            lambda cellIterator: self.translateAlarmCell(cellIterator)
+        results = self.columnSeries.apply(
+            lambda cellIterator: self.__translateCell(cellIterator)
         )
 
         return results
 
-    def translateAlarmCell(self, cellString: str) -> str:
+    def __translateCell(self, cellString: str) -> str:
         try:
             cellValue = int(cellString)
-            bitArray = self.decimalToBinaryArray(cellValue)
-            alarmNormalizedArray = self.divideBinaryArray(bitArray)
-            return self.mapAlarms(alarmNormalizedArray)
+            bitArray = self.__decimalToBinaryArray(cellValue)
+            alarmNormalizedArray = self.__divideBinaryArray(bitArray)
+            return self.__mapAlarms(alarmNormalizedArray)
         except Exception:
             return cellString
 
-    def decimalToBinaryArray(self, value: int | str) -> List[int]:
+    def __decimalToBinaryArray(self, value: int | str) -> List[int]:
         try:
             decimalNumber = int(value)
         except Exception:
@@ -50,25 +50,25 @@ class AlarmTranslatorService:
         bitArray = [int(bit) for bit in binaryString]
         return bitArray
 
-    def divideBinaryArray(self, binaryArray: List[int]) -> List[str]:
-        if self.alarmBitLength <= 0:
+    def __divideBinaryArray(self, binaryArray: List[int]) -> List[str]:
+        if self.groupBitLength <= 0:
             raise ValueError("Alarm bit length must be a positive integer")
 
         if not all(bit in (0, 1) for bit in binaryArray):
             raise ValueError("Binary array must contain only 0s and 1s")
 
-        paddedBinaryArray = self.getPaddedArray(binaryArray)
+        paddedBinaryArray = self.__getPaddedArray(binaryArray)
 
-        decimalValues = self.getHighToLowArray(paddedBinaryArray)
+        decimalValues = self.__getHighToLowArray(paddedBinaryArray)
 
         # The spec expects reversing the groups so that lower-order groups come first
         decimalValues.reverse()
         return decimalValues
 
-    def getHighToLowArray(self, paddedBinaryArray):
+    def __getHighToLowArray(self, paddedBinaryArray):
         decimalValues: List[str] = []
-        for startIndex in range(0, len(paddedBinaryArray), self.alarmBitLength):
-            chunkBits = paddedBinaryArray[startIndex : startIndex + self.alarmBitLength]
+        for startIndex in range(0, len(paddedBinaryArray), self.groupBitLength):
+            chunkBits = paddedBinaryArray[startIndex : startIndex + self.groupBitLength]
             # chunkBits is Most-Significative-Bit-first
             chunkValue = 0
             for bit in chunkBits:
@@ -77,34 +77,34 @@ class AlarmTranslatorService:
 
         return decimalValues
 
-    def getPaddedArray(self, binaryArray):
-        remainder = len(binaryArray) % self.alarmBitLength
+    def __getPaddedArray(self, binaryArray):
+        remainder = len(binaryArray) % self.groupBitLength
         if remainder != 0:
-            paddingNeeded = self.alarmBitLength - remainder
+            paddingNeeded = self.groupBitLength - remainder
             paddedBinaryArray = [0] * paddingNeeded + list(binaryArray)
         else:
             paddedBinaryArray = list(binaryArray)
 
         return paddedBinaryArray
 
-    def mapAlarms(self, dividedValues: List[str]) -> str:
+    def __mapAlarms(self, dividedValues: List[str]) -> str:
         mappedTexts: List[str] = []
 
         for position, value in enumerate(dividedValues):
             if value == 0:
                 continue
 
-            alarmDescription = self.getAlarmDescription(position, value)
+            alarmDescription = self.__getAlarmDescription(position, value)
             mappedTexts.append(alarmDescription)
 
         if not mappedTexts:
             return "normal"
 
-        return self.separator.join(mappedTexts)
+        return self.separatorToken.join(mappedTexts)
 
-    def getAlarmDescription(self, position, value):
+    def __getAlarmDescription(self, position, value):
         alarmDescription = None
-        positionAlarmValues = self.alarmMap.get(str(position))
+        positionAlarmValues = self.definitionMap.get(str(position))
         if positionAlarmValues:
             alarmDescription = positionAlarmValues.get(value)
 
