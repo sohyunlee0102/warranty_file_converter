@@ -109,9 +109,9 @@ class CsvValidatorService:
 
     def _validateDatetimeValues(self, timeColumn, timeSeries):
         if timeSeries.isna().any():
-            bad_rows = timeSeries[timeSeries.isna()].index.tolist()
+            badRows = timeSeries[timeSeries.isna()].index.tolist()
             raise ValueError(
-                f"❌ Time column '{timeColumn}' contains unparsable datetime values at rows: {bad_rows}"
+                f"❌ Time column '{timeColumn}' contains unparsable datetime values at rows: {badRows}"
             )
 
         if not pd.api.types.is_datetime64_any_dtype(timeSeries):
