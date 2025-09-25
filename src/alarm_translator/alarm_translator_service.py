@@ -9,17 +9,17 @@ class AlarmTranslatorService:
     def __init__(
         self,
         columnSeries: pd.Series[str],
-        groupBitLength: int,
+        alarmBitLength: int,
         definitionMap: Dict[str, Dict[str, str]],
         separatorToken: str = "\n",
     ):
         self.columnSeries = columnSeries
-        self.groupBitLength = groupBitLength
+        self.alarmBitLength = alarmBitLength
         self.definitionMap = definitionMap
         self.separatorToken = separatorToken
 
     def translateColumn(self) -> pd.Series[str]:
-        if self.groupBitLength <= 0:
+        if self.alarmBitLength <= 0:
             raise ValueError("alarmBitLength must be positive")
 
         results = self.columnSeries.apply(
@@ -51,7 +51,7 @@ class AlarmTranslatorService:
         return bitArray
 
     def __divideBinaryArray(self, binaryArray: List[int]) -> List[str]:
-        if self.groupBitLength <= 0:
+        if self.alarmBitLength <= 0:
             raise ValueError("Alarm bit length must be a positive integer")
 
         if not all(bit in (0, 1) for bit in binaryArray):
@@ -67,8 +67,8 @@ class AlarmTranslatorService:
 
     def __getHighToLowArray(self, paddedBinaryArray):
         decimalValues: List[str] = []
-        for startIndex in range(0, len(paddedBinaryArray), self.groupBitLength):
-            chunkBits = paddedBinaryArray[startIndex : startIndex + self.groupBitLength]
+        for startIndex in range(0, len(paddedBinaryArray), self.alarmBitLength):
+            chunkBits = paddedBinaryArray[startIndex : startIndex + self.alarmBitLength]
             # chunkBits is Most-Significative-Bit-first
             chunkValue = 0
             for bit in chunkBits:
@@ -78,9 +78,9 @@ class AlarmTranslatorService:
         return decimalValues
 
     def __getPaddedArray(self, binaryArray):
-        remainder = len(binaryArray) % self.groupBitLength
+        remainder = len(binaryArray) % self.alarmBitLength
         if remainder != 0:
-            paddingNeeded = self.groupBitLength - remainder
+            paddingNeeded = self.alarmBitLength - remainder
             paddedBinaryArray = [0] * paddingNeeded + list(binaryArray)
         else:
             paddedBinaryArray = list(binaryArray)
