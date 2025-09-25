@@ -1,8 +1,9 @@
 from model.driver_config.driver_configuration_dto import DriverConfigurationDto
 from model.driver_config.register_description_dto import RegisterDescriptionDto
+from model.required_headers_dto import RequiredHeadersDto
 
 
-def getRequiredHeaders(driverConfig: DriverConfigurationDto) -> dict[str, list[str]]:
+def getRequiredHeaders(driverConfig: DriverConfigurationDto) -> RequiredHeadersDto:
     mbmuDriverConfig = driverConfig.MBMU
     sbmuDriverConfig = driverConfig.SBMU
 
@@ -16,7 +17,7 @@ def getRequiredHeaders(driverConfig: DriverConfigurationDto) -> dict[str, list[s
         if isinstance(value, RegisterDescriptionDto) and value.required is True:
             requiredSbmuHeaders.append(key.upper())
 
-    return {
-        "MBMU": requiredMbmuHeaders,
-        "SBMU": requiredSbmuHeaders,
-    }
+    return RequiredHeadersDto(
+        MBMU=requiredMbmuHeaders,
+        SBMU=requiredSbmuHeaders,
+    )

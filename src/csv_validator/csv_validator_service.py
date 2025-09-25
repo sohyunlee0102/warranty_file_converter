@@ -2,19 +2,20 @@ import re
 
 import pandas as pd
 
+from model.required_headers_dto import RequiredHeadersDto
 from utils.catl_sbmu_offset_register_const import CATL_OFFSET_REGISTER
 
 
 class CsvValidatorService:
     def __init__(
         self,
-        requiredHeaders: dict[str, list[str]],
+        requiredHeaders: RequiredHeadersDto,
         csvData: pd.DataFrame,
         numberOfStrings: int,
         timeMaxIntervalInSeconds: int,
     ):
         self.csvData = csvData
-        self.driverRequiredHeaders: dict[str, list[str]] = requiredHeaders
+        self.driverRequiredHeaders: RequiredHeadersDto = requiredHeaders
         self.numberOfStrings = numberOfStrings
         self.timeMaxIntervalInSeconds = timeMaxIntervalInSeconds
 
@@ -54,12 +55,12 @@ class CsvValidatorService:
         return True
 
     def _getFullRequiredHeaders(self) -> list[str]:
-        requiredHeaders = self.driverRequiredHeaders["MBMU"]
-        if len(self.driverRequiredHeaders["SBMU"]) > 0:
+        requiredHeaders = self.driverRequiredHeaders.MBMU
+        if len(self.driverRequiredHeaders.SBMU) > 0:
             for stringIndex in range(0, self.numberOfStrings):
                 stringHeaders = [
                     f"{int(header, 16) + (stringIndex * CATL_OFFSET_REGISTER):X}"
-                    for header in self.driverRequiredHeaders["SBMU"]
+                    for header in self.driverRequiredHeaders.SBMU
                 ]
                 requiredHeaders.extend(stringHeaders)
         return requiredHeaders
