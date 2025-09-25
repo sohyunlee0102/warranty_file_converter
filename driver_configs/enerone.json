@@ -3,14 +3,10 @@
     "MBMU": {
         "DATE": {
             "required": true,
-            "targetColumn": "Date timestamp",
-            "offset": 0,
-            "conversionFactor": 1
+            "targetColumn": "Date timestamp"
         },
-        "MbusComm": {
-            "targetColumn": "Modbus communication state",
-            "offset": 0,
-            "conversionFactor": 1
+        "MBUSCOMM": {
+            "targetColumn": "Modbus communication state"
         },
         "0": {
             "required": true,
