@@ -1,11 +1,11 @@
 import json
-from typing import Any
 
 from model.catl_battery_models_enum import ECatlBatteryModels
+from model.driver_config.driver_configuration_dto import DriverConfigurationDto
 from utils.driver_config_path_const import DRIVER_CONFIG_PATHS
 
 
-def getDriverConfiguration(driverModel: ECatlBatteryModels) -> dict[str, Any]:
+def getDriverConfiguration(driverModel: ECatlBatteryModels) -> DriverConfigurationDto:
     configPath = DRIVER_CONFIG_PATHS.get(driverModel)
 
     if not configPath:
