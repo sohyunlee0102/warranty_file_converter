@@ -1,0 +1,1350 @@
+{
+    "timeMaxIntervalInSeconds": 6,
+    "MBMU": {
+        "DATE": {
+            "required": true,
+            "targetColumn": "Date timestamp",
+            "offset": 0,
+            "conversionFactor": 1
+        },
+        "MbusComm": {
+            "targetColumn": "Modbus communication state",
+            "offset": 0,
+            "conversionFactor": 1
+        },
+        "0": {
+            "required": true,
+            "targetColumn": "SBMU system warning & faults 1",
+            "alarmMap": {
+                "0": {
+                    "1": "Single cell over-voltage warning level 1"
+                },
+                "1": {
+                    "1": "Single cell over-voltage warning level 2"
+                },
+                "2": {
+                    "1": "Single cell over-voltage warning level 3"
+                },
+                "3": {
+                    "1": "Single cell under-voltage warning level 1"
+                },
+                "4": {
+                    "1": "Single cell under-voltage warning level 2"
+                },
+                "5": {
+                    "1": "Single cell under-voltage warning level 3"
+                },
+                "6": {
+                    "1": "Single cell extreme over-voltage warning"
+                },
+                "7": {
+                    "1": "Single cell extreme under-voltage warning"
+                },
+                "8": {
+                    "1": "Single rack over-voltage warning level 1"
+                },
+                "9": {
+                    "1": "Single rack over-voltage warning level 2"
+                },
+                "10": {
+                    "1": "Single rack under-voltage warning level 1"
+                },
+                "11": {
+                    "1": "Single rack under-voltage warning level 2"
+                },
+                "12": {
+                    "1": "Big voltage difference between cells warning"
+                },
+                "13": {
+                    "1": "Invalid cell voltage warning"
+                },
+                "14": {
+                    "1": "Replacement required due to single cell over discharge"
+                },
+                "15": {
+                    "1": "Replacement required due to single cell over charge"
+                }
+            }
+        },
+        "1": {
+            "required": true,
+            "targetColumn": "SBMU system warning & faults 2",
+            "alarmMap": {
+                "0": {
+                    "1": "Low SOC over discharge warning"
+                },
+                "1": {
+                    "1": "Low SOC over discharge warning"
+                },
+                "2": {
+                    "1": "Discharge over-current warning level 1"
+                },
+                "3": {
+                    "1": "Discharge over-current warning level 2"
+                },
+                "4": {
+                    "1": "Discharge over-current warning level 3"
+                },
+                "5": {
+                    "1": "Discharge over-current warning level 4"
+                },
+                "6": {
+                    "1": "Charge over-current warning level 1"
+                },
+                "7": {
+                    "1": "Charge over-current warning level 2"
+                },
+                "8": {
+                    "1": "Charge over-current warning level 3"
+                },
+                "9": {
+                    "1": "Charge over-current warning level 4"
+                },
+                "10": {
+                    "1": "Current sensor failed warning"
+                },
+                "14": {
+                    "1": "Single cell over-temperature warning level 1"
+                },
+                "15": {
+                    "1": "Single cell over-temperature warning level 2"
+                }
+            }
+        },
+        "2": {
+            "targetColumn": "SBMU system warning & faults 3",
+            "alarmMap": {
+                "0": {
+                    "1": "Single cell over-temperature warning level 3"
+                },
+                "1": {
+                    "1": "Single cell over-temperature warning level 4"
+                },
+                "2": {
+                    "1": "Single cell under-temperature warning level 1"
+                },
+                "3": {
+                    "1": "Single cell under-temperature warning level 2"
+                },
+                "4": {
+                    "1": "Single cell under-temperature warning level 3"
+                },
+                "5": {
+                    "1": "Big temperature difference between cells warning level 1"
+                },
+                "6": {
+                    "1": "Big temperature difference between cells warning level 2"
+                },
+                "7": {
+                    "1": "Big temperature difference between cells warning level 3"
+                },
+                "15": {
+                    "1": "Single temperature sampling abnormal warning"
+                }
+            }
+        },
+        "3": {
+            "targetColumn": "SBMU system warning & faults 4",
+            "alarmMap": {
+                "0": {
+                    "1": "Multiple temperature sampling abnormal emitWarning"
+                }
+            }
+        },
+        "4": {
+            "targetColumn": "SBMU system warning & faults 5",
+            "alarmMap": {
+                "9": {
+                    "1": "CSC 24V power supply abnormal warning"
+                },
+                "10": {
+                    "1": "SBMU 24V power supply abnormal warning"
+                },
+                "14": {
+                    "1": "MSD warning"
+                },
+                "15": {
+                    "1": "Rack fuse warning"
+                }
+            }
+        },
+        "5": {
+            "targetColumn": "SBMU system warning & faults 6",
+            "alarmMap": {
+                "0": {
+                    "1": "Rack isolate switch warning"
+                },
+                "1": {
+                    "1": "Main positive relay sticking warning"
+                },
+                "2": {
+                    "1": "Main negative relay sticking warning"
+                },
+                "3": {
+                    "1": "Both main positive relay and main negative relay sticking fault"
+                },
+                "4": {
+                    "1": "Main positive relay open circuit warning"
+                },
+                "5": {
+                    "1": "Main negative open circuit warning"
+                },
+                "6": {
+                    "1": "Battery rack door (travel switch) fault"
+                },
+                "7": {
+                    "1": "Main control box fan warning"
+                }
+            }
+        },
+        "6": {
+            "targetColumn": "SBMU system warning & faults 7",
+            "alarmMap": {
+                "5": {
+                    "1": "Inner communication warning (CCAN)"
+                },
+                "6": {
+                    "1": "Inner communication warning (SCAN)"
+                },
+                "7": {
+                    "1": "Inner communication warning (MCAN)"
+                },
+                "8": {
+                    "1": "Inner communication warning (CCAN-TMS)"
+                },
+                "10": {
+                    "1": "Inner communication warning (CCAN-TMS)"
+                },
+                "11": {
+                    "1": "Balancing circuit warning"
+                },
+                "13": {
+                    "1": "SOC low warning level 1"
+                },
+                "14": {
+                    "1": "SOC low warning level 2"
+                },
+                "15": {
+                    "1": "HV circuit open circuit warning"
+                }
+            }
+        },
+        "7": {
+            "targetColumn": "SBMU system warning & faults 8",
+            "alarmMap": {
+                "3": {
+                    "1": "Pre-charging failed twice warning"
+                },
+                "9": {
+                    "1": "HV+&HV- reversed connection fault"
+                }
+            }
+        },
+        "8": {
+            "targetColumn": "SBMU system warning & faults 9",
+            "alarmMap": {
+                "0": {
+                    "1": "Thermal runaway caused fire fault"
+                },
+                "5": {
+                    "1": "HV circuit (Fuse)open circuit warning"
+                }
+            }
+        },
+        "9": {
+            "targetColumn": "SBMU system warning & faults 10",
+            "alarmMap": {
+                "8": {
+                    "1": "Big temperature difference between racks"
+                }
+            }
+        },
+        "10": {
+            "targetColumn": "MBMU system warning & faults 1",
+            "alarmMap": {
+                "0": {
+                    "1": "Insulation warning"
+                },
+                "1": {
+                    "1": "Insulation fault"
+                },
+                "2": {
+                    "1": "Invalid insulation fault"
+                },
+                "3": {
+                    "1": "The quantity of HV racks less than setting value fault"
+                },
+                "6": {
+                    "1": "SBMU communication lost warning"
+                },
+                "7": {
+                    "1": "SBMU communication lost fault"
+                },
+                "8": {
+                    "1": "EMS communication lost fault"
+                },
+                "9": {
+                    "1": "IMM communication lost fault"
+                },
+                "10": {
+                    "1": "Air conditioner communication lost warning"
+                },
+                "11": {
+                    "1": "Centralized TMS communication fault"
+                },
+                "12": {
+                    "1": "Centralized TMS communication warning"
+                },
+                "13": {
+                    "1": "Centralized TMS fault level 2"
+                },
+                "14": {
+                    "1": "Centralized TMS mode conflict fault"
+                },
+                "15": {
+                    "1": "Centralized TMS fault level 1"
+                }
+            }
+        },
+        "11": {
+            "targetColumn": "MBMU system warning & faults 2",
+            "alarmMap": {
+                "0": {
+                    "1": "SPD failure warning"
+                },
+                "1": {
+                    "1": "AUX Power DCDC failure warning"
+                },
+                "2": {
+                    "1": "AUX Power ACDC failure warning"
+                },
+                "3": {
+                    "1": "AUX Power failure fault"
+                },
+                "4": {
+                    "1": "Fire system fault level 1_MBMU"
+                },
+                "5": {
+                    "1": "Fire system fault level 2_MBMU"
+                },
+                "6": {
+                    "1": "Fire system failure warning MBMU"
+                },
+                "7": {
+                    "1": "E-STOP fault"
+                },
+                "8": {
+                    "1": "Client E-STOP fault"
+                },
+                "9": {
+                    "1": "Electrical rack door (travel switch) fault"
+                },
+                "10": {
+                    "1": "Electrical rack fan warning"
+                },
+                "11": {
+                    "1": "Smoke exhaust ventilation body warning"
+                },
+                "12": {
+                    "1": "Smoke exhaust ventilation state fault"
+                },
+                "13": {
+                    "1": "Humidifier1 failure warning"
+                }
+            }
+        },
+        "12": {
+            "targetColumn": "MBMU system warning & faults 3",
+            "alarmMap": {
+                "0": {
+                    "1": "Humidifier2 failure warning"
+                }
+            }
+        },
+        "13": {
+            "targetColumn": "MBMU system warning & faults 4",
+            "alarmMap": {
+                "3": {
+                    "1": "MBMU 24V power supply abnormal fault"
+                },
+                "4": {
+                    "1": "Slave MBMU communication lost fault"
+                },
+                "7": {
+                    "1": "Centralized TMS warning level 3"
+                },
+                "15": {
+                    "1": "Step-Charge Mode inconsistency warning"
+                }
+            }
+        },
+        "20": {
+            "targetColumn": "System voltage",
+            "conversionFactor": 0.1
+        },
+        "21": {
+            "targetColumn": "System Current",
+            "offset": -20000
+        },
+        "22": {
+            "targetColumn": "SOC",
+            "conversionFactor": 0.1
+        },
+        "23": {
+            "targetColumn": "SOH",
+            "conversionFactor": 0.1
+        },
+        "24": {
+            "targetColumn": "Max cell voltage",
+            "conversionFactor": 0.001
+        },
+        "25": {
+            "targetColumn": "Min cell voltage",
+            "conversionFactor": 0.001
+        },
+        "26": {
+            "targetColumn": "Avg. cell voltage",
+            "conversionFactor": 0.001
+        },
+        "27": {
+            "targetColumn": "Max cell temperature",
+            "offset": -50
+        },
+        "28": {
+            "targetColumn": "Min cell temperature",
+            "offset": -50
+        },
+        "29": {
+            "targetColumn": "Avg. cell temperature",
+            "offset": -50
+        },
+        "2A": {
+            "targetColumn": "Max charge current allowed",
+            "offset": -20000
+        },
+        "2B": {
+            "targetColumn": "Max discharge current allowed",
+            "offset": -20000
+        },
+        "2C": {
+            "targetColumn": "Max charge power allowed",
+            "offset": -20000
+        },
+        "2D": {
+            "targetColumn": "Max discharge power allowed",
+            "offset": -20000
+        },
+        "2E": {
+            "targetColumn": "System power",
+            "offset": -20000
+        },
+        "2F": {
+            "targetColumn": "Charge SOE",
+            "conversionFactor": 0.1
+        },
+        "30": {
+            "targetColumn": "Discharge SOE",
+            "conversionFactor": 0.1
+        },
+        "31": {
+            "targetColumn": "System remained charge energy"
+        },
+        "32": {
+            "targetColumn": "System remained discharge energy"
+        },
+        "33": {
+            "targetColumn": "Max allowed charge voltage",
+            "conversionFactor": 0.1
+        },
+        "34": {
+            "targetColumn": "Min discharge voltage allowed",
+            "conversionFactor": 0.1
+        },
+        "35": {
+            "targetColumn": "Insulation detection function Status"
+        },
+        "36": {
+            "targetColumn": "Pos. insulation to GND"
+        },
+        "37": {
+            "targetColumn": "Neg. insulation to GND"
+        },
+        "38": {
+            "targetColumn": "Ambient average Temperature MBMU 1",
+            "offset": -50
+        },
+        "39": {
+            "targetColumn": "Ambient average Temperature MBMU 2",
+            "offset": -50
+        },
+        "3A": {
+            "targetColumn": "Ambient average Temperature MBMU 3",
+            "offset": -50
+        },
+        "3B": {
+            "targetColumn": "Ambient average Temperature MBMU 4",
+            "offset": -50
+        },
+        "3C": {
+            "targetColumn": "Ambient average Temperature MBMU 5",
+            "offset": -50
+        },
+        "3D": {
+            "targetColumn": "Ambient average Temperature MBMU 6",
+            "offset": -50
+        },
+        "3E": {
+            "targetColumn": "Ambient humidity MBMU 1"
+        },
+        "3F": {
+            "targetColumn": "Ambient humidity MBMU 2 (Reserve)"
+        },
+        "40": {
+            "targetColumn": "Ambient humidity MBMU 3 (Reserve)"
+        },
+        "41": {
+            "targetColumn": "Ambient humidity MBMU 4 (Reserve)"
+        },
+        "42": {
+            "targetColumn": "Ambient humidity MBMU 5 (Reserve)"
+        },
+        "43": {
+            "targetColumn": "Ambient humidity MBMU 6 (Reserve)"
+        },
+        "44": {
+            "targetColumn": "SYS SOC Maintenance Required ST"
+        },
+        "59": {
+            "targetColumn": "TMS Address information"
+        },
+        "60": {
+            "targetColumn": "TMS1 mode command by BMS"
+        },
+        "61": {
+            "targetColumn": "TMS 1 temperature value set by BMS",
+            "offset": -50
+        },
+        "62": {
+            "targetColumn": "TMS1 real mode"
+        },
+        "63": {
+            "targetColumn": "Rack inlet (TMS1 Outlet) temperature ",
+            "offset": -50
+        },
+        "64": {
+            "targetColumn": "Rack outlet (TMS1 inlet) temperature",
+            "offset": -50
+        },
+        "65": {
+            "targetColumn": "TMS1 Environment temperature",
+            "offset": -50
+        },
+        "66": {
+            "targetColumn": "TMS1 fault code"
+        },
+        "67": {
+            "targetColumn": "TMS1 fault level"
+        },
+        "68": {
+            "targetColumn": "TMS1 Cooling mode protection"
+        },
+        "69": {
+            "targetColumn": "TMS2 mode command by BMS"
+        },
+        "6A": {
+            "targetColumn": "TMS2 temperature value set by BMS",
+            "offset": -50
+        },
+        "6B": {
+            "targetColumn": "TMS2 real mode"
+        },
+        "6C": {
+            "targetColumn": "Rack inlet (TMS2 Outlet) temperature",
+            "offset": -50
+        },
+        "6D": {
+            "targetColumn": "Rack outlet (TMS2 inlet) temperature",
+            "offset": -50
+        },
+        "6E": {
+            "targetColumn": "TMS2 Environment temperature",
+            "offset": -50
+        },
+        "6F": {
+            "targetColumn": "TMS2 fault code"
+        },
+        "70": {
+            "targetColumn": "TMS2 fault level"
+        },
+        "71": {
+            "targetColumn": "TMS2 Cooling mode protection"
+        },
+        "72": {
+            "targetColumn": "TMS3 mode command by BMS"
+        },
+        "73": {
+            "targetColumn": "TMS3 temperature value set by BMS",
+            "offset": -50
+        },
+        "74": {
+            "targetColumn": "TMS3 real mode"
+        },
+        "75": {
+            "targetColumn": "Rack inlet (TMS3 Outlet) temperature",
+            "offset": -50
+        },
+        "76": {
+            "targetColumn": "Rack outlet (TMS3 inlet) temperature",
+            "offset": -50
+        },
+        "77": {
+            "targetColumn": "TMS3 Environment temperature",
+            "offset": -50
+        },
+        "78": {
+            "targetColumn": "TMS3 fault code"
+        },
+        "79": {
+            "targetColumn": "TMS3 fault level"
+        },
+        "7A": {
+            "targetColumn": "TMS3 Cooling mode protection"
+        },
+        "7B": {
+            "targetColumn": "TMS4 mode command by BMS"
+        },
+        "7C": {
+            "targetColumn": "TMS4 temperature value set by BMS",
+            "offset": -50
+        },
+        "7D": {
+            "targetColumn": "TMS4 real mode"
+        },
+        "7E": {
+            "targetColumn": "Rack inlet (TMS4 Outlet) temperature",
+            "offset": -50
+        },
+        "7F": {
+            "targetColumn": "Rack outlet (TMS4 inlet) temperature",
+            "offset": -50
+        },
+        "80": {
+            "targetColumn": "TMS4 Environment temperature",
+            "offset": -50
+        },
+        "81": {
+            "targetColumn": "TMS4 fault code"
+        },
+        "82": {
+            "targetColumn": "TMS4 fault level"
+        },
+        "83": {
+            "targetColumn": "TMS4 Cooling mode protection"
+        },
+        "84": {
+            "targetColumn": "TMS5 mode command by BMS"
+        },
+        "85": {
+            "targetColumn": "TMS5 temperature value set by BMS",
+            "offset": -50
+        },
+        "86": {
+            "targetColumn": "TMS5 real mode"
+        },
+        "87": {
+            "targetColumn": "Rack inlet (TMS5 Outlet) temperature",
+            "offset": -50
+        },
+        "88": {
+            "targetColumn": "Rack outlet (TMS5 inlet) temperature",
+            "offset": -50
+        },
+        "89": {
+            "targetColumn": "TMS5 Environment temperature",
+            "offset": -50
+        },
+        "8A": {
+            "targetColumn": "TMS5 fault code"
+        },
+        "8B": {
+            "targetColumn": "TMS5 fault level"
+        },
+        "8C": {
+            "targetColumn": "TMS5 Cooling mode protection"
+        },
+        "8D": {
+            "targetColumn": "TMS6 mode command by BMS"
+        },
+        "8E": {
+            "targetColumn": "TMS6 temperature value set by BMS",
+            "offset": -50
+        },
+        "8F": {
+            "targetColumn": "TMS6 real mode"
+        },
+        "90": {
+            "targetColumn": "Rack inlet (TMS6 Outlet) temperature",
+            "offset": -50
+        },
+        "91": {
+            "targetColumn": "Rack outlet (TMS6 inlet) temperature",
+            "offset": -50
+        },
+        "92": {
+            "targetColumn": "TMS6 Environment temperature",
+            "offset": -50
+        },
+        "93": {
+            "targetColumn": "TMS6 fault code"
+        },
+        "94": {
+            "targetColumn": "TMS6 fault level"
+        },
+        "95": {
+            "targetColumn": "TMS6 Cooling mode protection"
+        },
+        "100": {
+            "targetColumn": "MBMU Software Version"
+        },
+        "108": {
+            "targetColumn": "MBMU Hardware Version"
+        },
+        "110": {
+            "targetColumn": "ETH Software Version"
+        },
+        "118": {
+            "targetColumn": "ETH Hardware Version"
+        },
+        "120": {
+            "targetColumn": "IMM Software Version"
+        },
+        "128": {
+            "targetColumn": "IMM Hardware Version"
+        },
+        "130": {
+            "targetColumn": "Max cell voltage HV On"
+        },
+        "131": {
+            "targetColumn": "Min cell voltage HV On"
+        },
+        "132": {
+            "targetColumn": "Avg. cell voltage HV On"
+        },
+        "133": {
+            "targetColumn": "Max cell temperature HV On",
+            "offset": -50
+        },
+        "134": {
+            "targetColumn": "Min cell temperature HV On",
+            "offset": -50
+        },
+        "135": {
+            "targetColumn": "Avg. cell temperature HV On",
+            "offset": -50
+        },
+        "136": {
+            "targetColumn": "SBMU Position Max cell temperature HV On"
+        },
+        "137": {
+            "targetColumn": "CSC Position Max cell temperature HV On"
+        },
+        "138": {
+            "targetColumn": "SBMU Position Min cell temperature HV On"
+        },
+        "139": {
+            "targetColumn": "CSC Position Min cell temperature HV On"
+        },
+        "13A": {
+            "targetColumn": "SBMU Position Max cell voltage HV On"
+        },
+        "13B": {
+            "targetColumn": "CSC Position Max cell voltage HV On"
+        },
+        "13C": {
+            "targetColumn": "Cell Position Max cell voltage HV On"
+        },
+        "13D": {
+            "targetColumn": "SBMU Position Min cell voltage HV On"
+        },
+        "13E": {
+            "targetColumn": "CSC Position Min cell voltage HV On"
+        },
+        "13F": {
+            "targetColumn": "Cell Position Min cell voltage HV On"
+        },
+        "140": {
+            "targetColumn": "SBMU Position Max cell temperature LV On"
+        },
+        "141": {
+            "targetColumn": "CSC Position Max cell temperature LV On"
+        },
+        "142": {
+            "targetColumn": "SBMU Position Max cell voltage LV On"
+        },
+        "143": {
+            "targetColumn": "CSC Position Max cell voltage LV On"
+        },
+        "144": {
+            "targetColumn": "Cell Position Max cell voltage LV On"
+        },
+        "145": {
+            "targetColumn": "SBMU Position Min cell voltage LV On"
+        },
+        "146": {
+            "targetColumn": "CSC Position Min cell voltage LV On"
+        },
+        "147": {
+            "targetColumn": "Cell Position Min cell voltage LV On"
+        },
+        "148": {
+            "targetColumn": "SBMU Position Min cell temperature LV On"
+        },
+        "149": {
+            "targetColumn": "CSC Position Min cell temperature LV On"
+        },
+        "300": {
+            "targetColumn": "BMS heartbeat"
+        },
+        "301": {
+            "targetColumn": "BMS power on"
+        },
+        "302": {
+            "targetColumn": "BMS status"
+        },
+        "304": {
+            "targetColumn": "Number of HV connected subsystem"
+        },
+        "305": {
+            "targetColumn": "Number of Racks"
+        },
+        "306": {
+            "targetColumn": "System Step-Charge Mode"
+        },
+        "380": {
+            "targetColumn": "EMS heartbeat"
+        },
+        "381": {
+            "targetColumn": "EMS_cmd"
+        },
+        "382": {
+            "targetColumn": "Battery system Aux power supply state"
+        },
+        "384": {
+            "targetColumn": "EMS_RTC _year",
+            "offset": 2000
+        },
+        "385": {
+            "targetColumn": "EMS_RTC_month"
+        },
+        "386": {
+            "targetColumn": "EMS_RTC_date"
+        },
+        "387": {
+            "targetColumn": "EMS_RTC_hour"
+        },
+        "388": {
+            "targetColumn": "EMS_RTC_minute"
+        },
+        "389": {
+            "targetColumn": "EMS_RTC_second"
+        },
+        "38a": {
+            "targetColumn": "EMS RTC CMD"
+        },
+        "38b": {
+            "targetColumn": "EMS insulation switch control cmd"
+        },
+        "38c": {
+            "targetColumn": "Fault_Clear_cmd"
+        },
+        "38d": {
+            "targetColumn": "Rack(s) disable command 1 for Rack 1-16"
+        },
+        "38e": {
+            "targetColumn": "Rack(s) disable command 2 for Rack 17-32"
+        },
+        "38f": {
+            "targetColumn": "Rack(s) disable command 3 for Rack 33-48"
+        },
+        "390": {
+            "targetColumn": "Step-Charge Switch"
+        },
+        "391": {
+            "targetColumn": "Black-start"
+        },
+        "392": {
+            "targetColumn": "Bytes1 of the diagnostic message sent by PC to SBMU",
+            "offset": 1
+        },
+        "393": {
+            "targetColumn": "Bytes2 of the diagnostic message sent by PC to SBMU"
+        },
+        "394": {
+            "targetColumn": "Bytes3 of the diagnostic message sent by PC to SBMU"
+        }
+    },
+    "SBMU": {
+        "400": {
+            "required": true,
+            "targetColumn": "SBMU warning & faults 1",
+            "alarmMap": {
+                "0": {
+                    "1": "Single-cell over-voltage warning level 1"
+                },
+                "1": {
+                    "1": "Single cell over-voltage warning level 2"
+                },
+                "2": {
+                    "1": "Single cell over-voltage warning level 3"
+                },
+                "3": {
+                    "1": "Single cell under-voltage warning level 1"
+                },
+                "4": {
+                    "1": "Single cell under-voltage warning level 2"
+                },
+                "5": {
+                    "1": "Single cell under-voltage warning level 3"
+                },
+                "6": {
+                    "1": "Single cell extreme over-voltage fault"
+                },
+                "7": {
+                    "1": "Single cell extreme under-voltage fault"
+                },
+                "8": {
+                    "1": "Single rack over-voltage warning level 1"
+                },
+                "9": {
+                    "1": "Single rack over-voltage warning level 2"
+                },
+                "10": {
+                    "1": "Single rack under-voltage warning level 1"
+                },
+                "11": {
+                    "1": "Single rack under-voltage warning level 2"
+                },
+                "12": {
+                    "1": "Big voltage difference between cells warning"
+                },
+                "13": {
+                    "1": "Invalid cell voltage fault"
+                },
+                "14": {
+                    "1": "Replacement required due to single cell over discharge"
+                },
+                "15": {
+                    "1": "Replacement required due to single cell over charge"
+                }
+            }
+        },
+        "401": {
+            "required": true,
+            "targetColumn": "SBMU warning & faults 2",
+            "alarmMap": {
+                "0": {
+                    "1": "Low SOC over discharge warning"
+                },
+                "1": {
+                    "1": "Low SOC over discharge fault"
+                },
+                "2": {
+                    "1": "Discharge over - current warning level 1"
+                },
+                "3": {
+                    "1": "Discharge over - current warning level 2"
+                },
+                "4": {
+                    "1": "Discharge over - current warning level 3"
+                },
+                "5": {
+                    "1": "Discharge over - current fault level 4"
+                },
+                "6": {
+                    "1": "Charge over - current warning level 1"
+                },
+                "7": {
+                    "1": "Charge over - current warning level 2"
+                },
+                "8": {
+                    "1": "Charge over - current warning level 3"
+                },
+                "9": {
+                    "1": "Charge over - current fault level 4"
+                },
+                "10": {
+                    "1": "Current sensor failed fault"
+                },
+                "14": {
+                    "1": "Single cell over - temperature warning level 1"
+                },
+                "15": {
+                    "1": "Single cell over - temperature warning level 2"
+                }
+            }
+        },
+        "402": {
+            "required": true,
+            "targetColumn": "SBMU warning & faults 3",
+            "alarmMap": {
+                "0": {
+                    "1": "Single cell over - temperature warning level 3"
+                },
+                "1": {
+                    "1": "Single cell over - temperature fault level 4"
+                },
+                "2": {
+                    "1": "Single cell under - temperature warning level 1"
+                },
+                "3": {
+                    "1": "Single cell under - temperature warning level 2"
+                },
+                "4": {
+                    "1": "Single cell under - temperature warning level 3"
+                },
+                "5": {
+                    "1": "Big temperature difference between cells warning level 1"
+                },
+                "6": {
+                    "1": "Big temperature difference between cells warning level 2"
+                },
+                "7": {
+                    "1": "Big temperature difference between cells warning level 3"
+                },
+                "15": {
+                    "1": "Single temperature sampling abnormal fault"
+                }
+            }
+        },
+        "403": {
+            "required": true,
+            "targetColumn": "SBMU warning & faults 4",
+            "alarmMap": {
+                "0": {
+                    "1": "Multiple temperature sampling abnormal fault"
+                }
+            }
+        },
+        "404": {
+            "required": true,
+            "targetColumn": "SBMU warning & faults 5",
+            "alarmMap": {
+                "9": {
+                    "1": "CSC 24V power supply abnormal fault"
+                },
+                "10": {
+                    "1": "SBMU 24V power supply abnormal fault"
+                },
+                "14": {
+                    "1": "MSD fault"
+                },
+                "15": {
+                    "1": "Rack fuse fault"
+                }
+            }
+        },
+        "405": {
+            "required": true,
+            "targetColumn": "SBMU warning & faults 6",
+            "alarmMap": {
+                "0": {
+                    "1": "Rack isolate switch fault"
+                },
+                "1": {
+                    "1": "Main positive relay sticking fault"
+                },
+                "2": {
+                    "1": "Main negative relay sticking fault"
+                },
+                "3": {
+                    "1": "Both main positive relay and main negative relay sticking fault"
+                },
+                "4": {
+                    "1": "Main positive relay open circuit fault"
+                },
+                "5": {
+                    "1": "Main negative open circuit fault"
+                },
+                "6": {
+                    "1": "Battery rack door(travel switch) fault"
+                },
+                "7": {
+                    "1": "Main control box fan fault"
+                }
+            }
+        },
+        "406": {
+            "required": true,
+            "targetColumn": "SBMU warning & faults 7",
+            "alarmMap": {
+                "5": {
+                    "1": "Inner communication fault(CCAN)"
+                },
+                "6": {
+                    "1": "Inner communication fault(SCAN)"
+                },
+                "7": {
+                    "1": "Inner communication fault(MCAN)"
+                },
+                "11": {
+                    "1": "Balancing circuit fault"
+                },
+                "13": {
+                    "1": "SOC low warning level 1"
+                },
+                "14": {
+                    "1": "SOC low warning level 2"
+                },
+                "15": {
+                    "1": "HV circuit open circuit fault"
+                }
+            }
+        },
+        "407": {
+            "required": true,
+            "targetColumn": "SBMU warning & faults 8",
+            "alarmMap": {
+                "3": {
+                    "1": "Pre - charging failed twice fault"
+                },
+                "9": {
+                    "1": "HV +& HV - reversed connection fault"
+                }
+            }
+        },
+        "408": {
+            "required": true,
+            "targetColumn": "SBMU warning & faults 9",
+            "alarmMap": {
+                "0": {
+                    "1": "Thermal runaway caused fire fault"
+                },
+                "5": {
+                    "1": "HV circuit(Fuse)open circuit fault"
+                }
+            }
+        },
+        "409": {
+            "required": true,
+            "targetColumn": "SBMU warning & faults 10",
+            "alarmMap": {
+                "8": {
+                    "1": "Big temperature difference between racks"
+                }
+            }
+        },
+        "410": {
+            "targetColumn": "Pre charge relay status"
+        },
+        "411": {
+            "targetColumn": "Master positive relay status"
+        },
+        "412": {
+            "targetColumn": "Master negative relay status"
+        },
+        "413": {
+            "targetColumn": "High voltage online status"
+        },
+        "414": {
+            "targetColumn": "BAT SOC Maintenance Required ST"
+        },
+        "415": {
+            "targetColumn": "Rack Step-Charge status"
+        },
+        "420": {
+            "targetColumn": "Battery Subsystem Voltage",
+            "conversionFactor": 0.1
+        },
+        "421": {
+            "targetColumn": "Battery Subsystem Voltage",
+            "conversionFactor": 0.1
+        },
+        "422": {
+            "targetColumn": "Battery Subsystem Current",
+            "offset": -2000,
+            "conversionFactor": 0.1
+        },
+        "423": {
+            "targetColumn": "SOC",
+            "conversionFactor": 0.1
+        },
+        "424": {
+            "targetColumn": "SOH",
+            "conversionFactor": 0.1
+        },
+        "425": {
+            "targetColumn": "Max single cell voltage",
+            "conversionFactor": 0.001
+        },
+        "426": {
+            "targetColumn": "Min single cell voltage",
+            "conversionFactor": 0.001
+        },
+        "427": {
+            "targetColumn": "Avg. cell voltage",
+            "conversionFactor": 0.001
+        },
+        "428": {
+            "targetColumn": "Max single cell temperature",
+            "offset": -50
+        },
+        "429": {
+            "targetColumn": "Min single cell temperature",
+            "offset": -50
+        },
+        "42a": {
+            "targetColumn": "Avg. single cell temperature",
+            "offset": -50
+        },
+        "42b": {
+            "targetColumn": "Max allowed charge current",
+            "offset": -2000,
+            "conversionFactor": 0.1
+        },
+        "42c": {
+            "targetColumn": "Max allowed discharge current",
+            "offset": -2000,
+            "conversionFactor": 0.1
+        },
+        "42d": {
+            "targetColumn": "Max charge power allowed",
+            "offset": -2000,
+            "conversionFactor": 0.1
+        },
+        "42e": {
+            "targetColumn": "Max discharge power allowed",
+            "offset": -2000,
+            "conversionFactor": 0.1
+        },
+        "42f": {
+            "targetColumn": "Battery subsystem power",
+            "offset": -2000,
+            "conversionFactor": 0.1
+        },
+        "430": {
+            "targetColumn": "Max single cell voltage position"
+        },
+        "431": {
+            "targetColumn": "Min single cell voltage position"
+        },
+        "432": {
+            "targetColumn": "Max single cell temperature position"
+        },
+        "433": {
+            "targetColumn": "Min single cell temperature position"
+        },
+        "434": {
+            "targetColumn": "Charge SOE",
+            "conversionFactor": 0.1
+        },
+        "435": {
+            "targetColumn": "Discharge SOE",
+            "conversionFactor": 0.1
+        },
+        "436": {
+            "targetColumn": "subsystem remain charge energy",
+            "conversionFactor": 0.1
+        },
+        "437": {
+            "targetColumn": "subsystem remain discharge energy",
+            "conversionFactor": 0.1
+        },
+        "438": {
+            "targetColumn": "Sum of cell voltage",
+            "conversionFactor": 0.1
+        },
+        "439": {
+            "targetColumn": "Max Cell Self_Discharging rate",
+            "conversionFactor": 0.1
+        },
+        "440": {
+            "targetColumn": "Min Cell Self_Discharging rate",
+            "conversionFactor": 0.1
+        },
+        "441": {
+            "targetColumn": "Average Cell Self-Discharging rate",
+            "conversionFactor": 0.1
+        },
+        "454": {
+            "targetColumn": "Historical accumulated charging energy",
+            "conversionFactor": 0.1
+        },
+        "456": {
+            "targetColumn": "Historical cumulative discharge energy",
+            "conversionFactor": 0.1
+        },
+        "458": {
+            "targetColumn": "Historical accumulated charging Capacity",
+            "conversionFactor": 0.1
+        },
+        "45a": {
+            "targetColumn": "Historical cumulative discharge Capacity",
+            "conversionFactor": 0.1
+        },
+        "45c": {
+            "targetColumn": "Historical cumulative charge and discharge cycle times"
+        },
+        "45d": {
+            "targetColumn": "Cumulative number of limit overvoltage faults"
+        },
+        "45e": {
+            "targetColumn": "Cumulative number of limit under voltage faults"
+        },
+        "45f": {
+            "targetColumn": "Cumulative number of charging overcurrent level 4 faults"
+        },
+        "460": {
+            "targetColumn": "Cumulative number of discharge overcurrent level 4 faults"
+        },
+        "461": {
+            "targetColumn": "Cumulative number of 4-level faults with too high cell temperature"
+        },
+        "462": {
+            "targetColumn": "Cumulative charging time at low temperature"
+        },
+        "464": {
+            "targetColumn": "Accumulation time at low temperature"
+        },
+        "466": {
+            "targetColumn": "Accumulation time at high temperature"
+        },
+        "468": {
+            "targetColumn": "Cumulative charging time at high temperature"
+        },
+        "46a": {
+            "targetColumn": "Cumulative discharge time at high temperature"
+        },
+        "46c": {
+            "targetColumn": "Battery production date year"
+        },
+        "46d": {
+            "targetColumn": "Battery production date week"
+        },
+        "46e": {
+            "targetColumn": "battery production date of the week"
+        },
+        "480": {
+            "targetColumn": "Detail message-singl e cell voltage",
+            "conversionFactor": 0.001
+        },
+        "6c0": {
+            "targetColumn": "Detail message-singl e cell temperature",
+            "offset": -50
+        },
+        "790": {
+            "targetColumn": "Detail message-balan ce information"
+        },
+        "7c0": {
+            "targetColumn": "SBMU Software Version"
+        },
+        "7c8": {
+            "targetColumn": "SBMU Hardware Version"
+        },
+        "7d0": {
+            "targetColumn": "CSC Software Version"
+        },
+        "7d8": {
+            "targetColumn": "CSC Hardware Version"
+        }
+    }
+}
