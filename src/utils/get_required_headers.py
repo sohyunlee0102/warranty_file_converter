@@ -1,9 +1,10 @@
-from typing import Any
+from model.driver_config.driver_configuration_dto import DriverConfigurationDto
+from model.required_headers_dto import RequiredHeadersDto
 
 
-def getRequiredHeaders(driverConfig: dict[str, Any]) -> dict[str, list[str]]:
-    mbmuDriverConfig = driverConfig.get("MBMU", {})
-    sbmuDriverConfig = driverConfig.get("SBMU", {})
+def getRequiredHeaders(driverConfig: DriverConfigurationDto) -> RequiredHeadersDto:
+    mbmuDriverConfig = driverConfig.MBMU
+    sbmuDriverConfig = driverConfig.SBMU
 
     requiredMbmuHeaders: list[str] = []
     for key, value in mbmuDriverConfig.items():
@@ -15,7 +16,7 @@ def getRequiredHeaders(driverConfig: dict[str, Any]) -> dict[str, list[str]]:
         if isinstance(value, dict) and value.get("required") is True:
             requiredSbmuHeaders.append(key.upper())
 
-    return {
-        "MBMU": requiredMbmuHeaders,
-        "SBMU": requiredSbmuHeaders,
-    }
+    return RequiredHeadersDto(
+        MBMU=requiredMbmuHeaders,
+        SBMU=requiredSbmuHeaders,
+    )
