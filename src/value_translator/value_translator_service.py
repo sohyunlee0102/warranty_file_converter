@@ -1,4 +1,3 @@
-import pandas as pd
 from pandas import Series
 
 
@@ -13,7 +12,7 @@ class ValueTranslatorService:
         self.offset = offset
         self.conversionFactor = conversionFactor
 
-    def translateColumn(self) -> pd.Series:
+    def translateColumn(self) -> Series:
         results = self.column.apply(
             lambda cellIterator: self.__translateCell(cellIterator)
         )
