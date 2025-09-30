@@ -3,6 +3,8 @@
 Expose a small public API and package metadata here.
 """
 
+import time
+
 from csv_validator.csv_validator_service import CsvValidatorService
 from file_manager.file_manager_service import FileManagerService
 from utils.cli.get_csv_path import getCsvPath
@@ -25,6 +27,7 @@ def processCsvFile():
     driverModel = getDriverModel()
     print(f"Selected Driver Model: {driverModel.name}\n")
 
+    start = time.time()
     driverConfig = getDriverConfiguration(driverModel)
     requiredHeaders = getRequiredHeaders(driverConfig)
     numberOfStrings = getNumberOfStrings(csvData)
@@ -39,6 +42,8 @@ def processCsvFile():
 
     # 4. Add logic to process the CSV file here
     # 5. Create xlsx file
+
+    fileManagerInstance.saveXlsx(csvPath, start, dataframeList)
 
 
 if __name__ == "__main__":
