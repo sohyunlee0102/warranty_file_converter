@@ -37,7 +37,6 @@ class FileManagerService:
         filename = Path(self.getFileName(csvPath))
         newFileName = filename.stem + "_converted.xlsx"
 
-        # TODO: add writing rights validation
         self.__validateFileName(newFileName)
 
         writingProgressBar = tqdm(

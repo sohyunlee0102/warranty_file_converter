@@ -1,38 +1,59 @@
 import re
 
-import pandas as pd
+from pandas import DataFrame, Series, Timedelta, api, to_datetime
+from tqdm import tqdm
 
-from model.required_headers_dto import RequiredHeadersDto
-from utils.catl_sbmu_offset_register_const import CATL_OFFSET_REGISTER
+from model.driver_config.driver_configuration_dto import DriverConfigurationDto
+from utils.catl_sbmu_offset_register_const import CATL_SBMU_OFFSET_REGISTER
+from utils.get_number_of_strings import getNumberOfStrings
+from utils.get_required_headers import getRequiredHeaders
 
 
 class CsvValidatorService:
     def __init__(
         self,
-        requiredHeaders: RequiredHeadersDto,
-        csvData: pd.DataFrame,
-        numberOfStrings: int,
-        timeMaxIntervalInSeconds: int,
+        csvData: DataFrame,
+        driverConfig: DriverConfigurationDto,
     ):
         self.csvData = csvData
-        self.driverRequiredHeaders: RequiredHeadersDto = requiredHeaders
-        self.numberOfStrings = numberOfStrings
-        self.timeMaxIntervalInSeconds = timeMaxIntervalInSeconds
+        self.driverRequiredHeaders = getRequiredHeaders(driverConfig)
+        self.numberOfStrings = getNumberOfStrings(csvData)
+        self.timeMaxIntervalInSeconds = driverConfig.timeMaxIntervalInSeconds
 
     def validate(self, csvPath: str) -> bool:
-        self.validateFileExtension(csvPath)
+        progressSteps = 5
+        validationProgressBar = tqdm(
+            total=progressSteps, desc="Validating CSV", unit="step", leave=False
+        )
+        try:
+            self.validateFileExtension(csvPath)
+            validationProgressBar.update(1)
+            validationProgressBar.refresh()
 
-        headerList = self.csvData.columns.tolist()
-        self.validateDuplicatedHeaders(headerList)
-        self.validateRequiredHeaders(headerList)
+            headerList = self.csvData.columns.tolist()
+            self.validateDuplicatedHeaders(headerList)
+            validationProgressBar.update(1)
+            validationProgressBar.refresh()
 
-        self.validateColumnCountConsistency()
+            self.validateRequiredHeaders(headerList)
+            validationProgressBar.update(1)
+            validationProgressBar.refresh()
 
-        self.validateTimeContinuity()
+            self.validateColumnCountConsistency()
+            validationProgressBar.update(1)
+            validationProgressBar.refresh()
 
-        print("✅ CSV file validation passed.")
+            self.validateTimeContinuity()
+            validationProgressBar.update(1)
+            validationProgressBar.refresh()
 
-        return True
+            validationProgressBar.write("✅ CSV file validation passed.")
+
+            return True
+        finally:
+            validationProgressBar.clear()
+            validationProgressBar.close()
+            validationProgressBar.refresh()
 
     def validateFileExtension(self, csvPath: str) -> bool:
         if not csvPath.lower().endswith(".csv"):
@@ -59,7 +80,7 @@ class CsvValidatorService:
         if len(self.driverRequiredHeaders.SBMU) > 0:
             for stringIndex in range(0, self.numberOfStrings):
                 stringHeaders = [
-                    f"{int(header, 16) + (stringIndex * CATL_OFFSET_REGISTER):X}"
+                    f"{int(header, 16) + (stringIndex * CATL_SBMU_OFFSET_REGISTER):X}"
                     for header in self.driverRequiredHeaders.SBMU
                 ]
                 requiredHeaders.extend(stringHeaders)
@@ -91,7 +112,7 @@ class CsvValidatorService:
 
         timeDiffs = timeSeries.diff().dropna()
 
-        expectedMaxInterval = pd.Timedelta(seconds=self.timeMaxIntervalInSeconds)
+        expectedMaxInterval = Timedelta(seconds=self.timeMaxIntervalInSeconds)
 
         if not (timeDiffs <= expectedMaxInterval).all():
             gapIndices = timeDiffs[timeDiffs > expectedMaxInterval].index.tolist()
@@ -101,9 +122,9 @@ class CsvValidatorService:
 
         return True
 
-    def _parseDatetimeColumn(self, timeColumn) -> pd.Series:
-        self.csvData[timeColumn] = pd.to_datetime(
-            self.csvData[timeColumn], errors="coerce", utc=True
+    def _parseDatetimeColumn(self, timeColumn) -> Series:
+        self.csvData[timeColumn] = to_datetime(
+            self.csvData[timeColumn], errors="coerce", utc=False
         )
         timeSeries = self.csvData[timeColumn]
         return timeSeries
@@ -115,7 +136,7 @@ class CsvValidatorService:
                 f"❌ Time column '{timeColumn}' contains unparsable datetime values at rows: {badRows}"
             )
 
-        if not pd.api.types.is_datetime64_any_dtype(timeSeries):
+        if not api.types.is_datetime64_any_dtype(timeSeries):
             raise ValueError(
                 f"❌ Time column '{timeColumn}' is not in datetime format."
             )
