@@ -31,6 +31,9 @@ class AlarmTranslatorService:
     def __translateCell(self, cellString: str) -> str:
         try:
             cellValue = int(cellString)
+            if cellValue == 0:
+                return "normal"
+
             bitArray = self.__decimalToBinaryArray(cellValue)
             alarmNormalizedArray = self.__divideBinaryArray(bitArray)
             return self.__mapAlarms(alarmNormalizedArray)
@@ -93,7 +96,7 @@ class AlarmTranslatorService:
         mappedTexts: List[str] = []
 
         for position, value in enumerate(dividedValues):
-            if value == 0:
+            if int(value) == 0:
                 continue
 
             alarmDescription = self.__getAlarmDescription(position, value)
@@ -104,12 +107,13 @@ class AlarmTranslatorService:
 
         return self.separatorToken.join(mappedTexts)
 
-    def __getAlarmDescription(self, position, value):
-        alarmDescription = None
+    def __getAlarmDescription(self, position, value) -> str:
+        alarmDescription = ""
         positionAlarmValues = self.definitionMap.get(str(position))
         if positionAlarmValues:
-            alarmDescription = positionAlarmValues.get(value)
+            alarmDescription = positionAlarmValues.get(value, "")
 
-        if not alarmDescription:
+        if value != 0 and alarmDescription == "":
             alarmDescription = f"unknown alarm in position {position} value {value}"
+
         return alarmDescription
