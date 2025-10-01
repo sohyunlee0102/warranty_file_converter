@@ -3,6 +3,7 @@
 Expose a small public API and package metadata here.
 """
 
+from csv_converter.converter_service import ConverterService
 from csv_validator.csv_validator_service import CsvValidatorService
 from file_manager.file_manager_service import FileManagerService
 from utils.cli.get_csv_path import getCsvPath
@@ -31,8 +32,8 @@ def processCsvFile():
     )
     fileValidatorInstance.validate(csvPath)
 
-    # 4. Add logic to process the CSV file here
-    # 5. Create xlsx file
+    converter = ConverterService(driverConfig)
+    dataframeList = converter.convert(csvData)
 
 
 if __name__ == "__main__":
