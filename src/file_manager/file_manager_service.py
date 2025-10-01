@@ -83,7 +83,7 @@ class FileManagerService:
                 pass
         except PermissionError:
             print(
-                f"❌ Cannot write to file (locked or permission denied): {outputPath}"
+                f"❌ Cannot write to file (locked, opened or permission denied): {outputPath}"
             )
             return False
         except OSError as error:
