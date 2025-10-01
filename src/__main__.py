@@ -3,6 +3,8 @@
 Expose a small public API and package metadata here.
 """
 
+import time
+
 from csv_converter.converter_service import ConverterService
 from csv_validator.csv_validator_service import CsvValidatorService
 from file_manager.file_manager_service import FileManagerService
@@ -23,6 +25,7 @@ def processCsvFile():
     driverModel = getDriverModel()
     print(f"Selected Driver Model: {driverModel.name}\n")
 
+    start = time.time()
     normalizeHeaders(csvData)
     driverConfig = getDriverConfiguration(driverModel)
 
@@ -34,6 +37,8 @@ def processCsvFile():
 
     converter = ConverterService(driverConfig)
     dataframeList = converter.convert(csvData)
+
+    fileManagerInstance.saveXlsx(csvPath, start, dataframeList)
 
 
 if __name__ == "__main__":
