@@ -1,5 +1,5 @@
 {
-    "timeMaxIntervalInSeconds": 6,
+    "timeMaxIntervalInSeconds": 11,
     "MBMU": {
         "DATE": {
             "required": true,
@@ -1113,7 +1113,7 @@
             }
         },
         "408": {
-            "required": true,
+            "required": false,
             "targetColumn": "SBMU warning & faults 9",
             "alarmMap": {
                 "0": {
@@ -1125,7 +1125,7 @@
             }
         },
         "409": {
-            "required": true,
+            "required": false,
             "targetColumn": "SBMU warning & faults 10",
             "alarmMap": {
                 "8": {
