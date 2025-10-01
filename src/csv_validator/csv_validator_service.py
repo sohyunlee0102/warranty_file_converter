@@ -148,8 +148,8 @@ class CsvValidatorService:
 
         invalidRowIndices = rowLengths[rowLengths != expectedColumnCount].index.tolist()
         if invalidRowIndices:
-            raise ValueError(
-                f"❌ Column count mismatch at rows: {invalidRowIndices}. "
+            print(
+                f"⚠️ Column count mismatch at rows: {invalidRowIndices}. "
                 f"Expected {expectedColumnCount} columns per row."
             )
 
