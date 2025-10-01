@@ -4,7 +4,7 @@ from pandas import DataFrame, Series, Timedelta, api, to_datetime
 from tqdm import tqdm
 
 from model.driver_config.driver_configuration_dto import DriverConfigurationDto
-from utils.catl_sbmu_offset_register_const import CATL_OFFSET_REGISTER
+from utils.catl_sbmu_offset_register_const import CATL_SBMU_OFFSET_REGISTER
 from utils.get_number_of_strings import getNumberOfStrings
 from utils.get_required_headers import getRequiredHeaders
 
@@ -80,7 +80,7 @@ class CsvValidatorService:
         if len(self.driverRequiredHeaders.SBMU) > 0:
             for stringIndex in range(0, self.numberOfStrings):
                 stringHeaders = [
-                    f"{int(header, 16) + (stringIndex * CATL_OFFSET_REGISTER):X}"
+                    f"{int(header, 16) + (stringIndex * CATL_SBMU_OFFSET_REGISTER):X}"
                     for header in self.driverRequiredHeaders.SBMU
                 ]
                 requiredHeaders.extend(stringHeaders)
