@@ -4,7 +4,7 @@ from typing import Dict, List
 
 import pandas as pd
 
-__ALARM_NORMAL_STATUS_VALUE = "normal"
+__ALARM_NORMAL_STATUS_VALUE = "Normal"
 
 
 class AlarmTranslatorService:
@@ -105,7 +105,7 @@ class AlarmTranslatorService:
             mappedTexts.append(alarmDescription)
 
         if not mappedTexts:
-            return "normal"
+            return __ALARM_NORMAL_STATUS_VALUE
 
         return self.separatorToken.join(mappedTexts)
 
