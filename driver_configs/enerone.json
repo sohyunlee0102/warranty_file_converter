@@ -107,8 +107,14 @@
         "10": {
             "required": true,
             "targetColumn": "System status (0-5)",
-            "offset": 0,
-            "conversionFactor": 1
+            "status": {
+                "0": "Initialize",
+                "1": "Normal",
+                "2": "Full charge",
+                "3": "Full discharge",
+                "4": "Warning status",
+                "5": "Fault status"
+            }
         },
         "20": {
             "required": true,
@@ -189,14 +195,24 @@
         "301": {
             "required": false,
             "targetColumn": "BMS_power_on (0-3)",
-            "offset": 0,
-            "conversionFactor": 1
+            "status": {
+                "0": "Power off ready",
+                "1": "Power on ready",
+                "2": "Power on fault",
+                "3": "Power off fault"
+            }
         },
         "302": {
             "required": false,
             "targetColumn": "BMS_status (0-5)",
-            "offset": 0,
-            "conversionFactor": 1
+            "status": {
+                "0": "Initial status",
+                "1": "Normal status",
+                "2": "Full charge status",
+                "3": "Full discharge status",
+                "4": "Warning status",
+                "5": "Fault status"
+            }
         },
         "304": {
             "required": true,
@@ -225,14 +241,20 @@
         "381": {
             "required": false,
             "targetColumn": "EMS cmd (0-3)",
-            "offset": 0,
-            "conversionFactor": 1
+            "status": {
+                "0": "Initial",
+                "1": "Stay status",
+                "2": "Power on cmd",
+                "3": "Power off cmd"
+            }
         },
         "382": {
             "required": false,
             "targetColumn": "EMS status (reserved)",
-            "offset": 0,
-            "conversionFactor": 1
+            "status": {
+                "0": "Normal",
+                "1": "Aux power lose"
+            }
         },
         "384": {
             "targetColumn": "EMS RTC year",
@@ -489,26 +511,34 @@
         },
         "410": {
             "targetColumn": "Pre-charge relay status (open 0/close 1) SBMU",
-            "offset": 0,
-            "conversionFactor": 1
+            "status": {
+                "0": "Open",
+                "1": "Close"
+            }
         },
         "411": {
             "required": true,
             "targetColumn": "Master status positive relay (open 0/close 1) SBMU",
-            "offset": 0,
-            "conversionFactor": 1
+            "status": {
+                "0": "Open",
+                "1": "Close"
+            }
         },
         "412": {
             "required": true,
             "targetColumn": "Master status negative relay (open 0/close 1) SBMU",
-            "offset": 0,
-            "conversionFactor": 1
+            "status": {
+                "0": "Open",
+                "1": "Close"
+            }
         },
         "414": {
             "required": true,
             "targetColumn": "Balance status (not run 0/run 1) SBMU",
-            "offset": 0,
-            "conversionFactor": 1
+            "status": {
+                "0": "Not Run",
+                "1": "Run"
+            }
         },
         "420": {
             "required": true,
@@ -609,8 +639,12 @@
         "448": {
             "required": true,
             "targetColumn": "TMS mode command by BMS SBMU",
-            "offset": 0,
-            "conversionFactor": 1
+            "status": {
+                "0": "power off",
+                "1": "cooling mode",
+                "2": "heating mode",
+                "3": "self-circulation mode"
+            }
         },
         "449": {
             "required": true,
@@ -621,8 +655,12 @@
         "44A": {
             "required": true,
             "targetColumn": "TMS real mode SBMU",
-            "offset": 0,
-            "conversionFactor": 1
+            "status": {
+                "0": "power off",
+                "1": "cooling mode",
+                "2": "heating mode",
+                "3": "self-circulation mode"
+            }
         },
         "44B": {
             "required": true,
@@ -657,14 +695,18 @@
         "450": {
             "required": true,
             "targetColumn": "Door state (close 0/open 1) SBMU",
-            "offset": 0,
-            "conversionFactor": 1
+            "status": {
+                "0": "Close",
+                "1": "Open"
+            }
         },
         "451": {
             "required": true,
             "targetColumn": "Fan state in control box (stop 0 /run 1) SBMU",
-            "offset": 0,
-            "conversionFactor": 1
+            "status": {
+                "0": "Stop",
+                "1": "Run"
+            }
         },
         "454": {
             "required": true,

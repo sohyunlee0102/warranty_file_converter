@@ -5,6 +5,7 @@ from model.driver_config.driver_configuration_dto import DriverConfigurationDto
 from model.driver_config.register_description_dto import (
     AlarmRegisterDescriptionDto,
     RegisterDescriptionDto,
+    StatusRegisterDescriptionDto,
     ValueRegisterDescriptionDto,
 )
 from utils.driver_config_path_const import DRIVER_CONFIG_PATHS
@@ -30,6 +31,14 @@ def _buildRegisterDescription(value: dict) -> RegisterDescriptionDto:
             targetColumn=targetColumn,
             offset=value.get("offset", 0),
             conversionFactor=value.get("conversionFactor", 1.0),
+        )
+
+    if "status" in value or "bitmask" in value:
+        return StatusRegisterDescriptionDto(
+            required=value.get("required", False),
+            targetColumn=targetColumn,
+            status=value.get("status"),
+            bitmask=value.get("bitmask"),
         )
 
     return RegisterDescriptionDto(
