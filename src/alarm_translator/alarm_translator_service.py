@@ -4,6 +4,8 @@ from typing import Dict, List
 
 import pandas as pd
 
+__ALARM_NORMAL_STATUS_VALUE = "normal"
+
 
 class AlarmTranslatorService:
     def __init__(
@@ -32,7 +34,7 @@ class AlarmTranslatorService:
         try:
             cellValue = int(cellString)
             if cellValue == 0:
-                return "normal"
+                return __ALARM_NORMAL_STATUS_VALUE
 
             bitArray = self.__decimalToBinaryArray(cellValue)
             alarmNormalizedArray = self.__divideBinaryArray(bitArray)
