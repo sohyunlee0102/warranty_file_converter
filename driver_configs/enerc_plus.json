@@ -463,9 +463,9 @@
         "35": {
             "targetColumn": "Insulation detection function Status",
             "status": {
-                "0": "invalid",
-                "1": "enable",
-                "2": "disable"
+                "0": "Invalid",
+                "1": "Enable",
+                "2": "Disable"
             }
         },
         "36": {
@@ -526,7 +526,7 @@
         "59": {
             "targetColumn": "TMS Address information",
             "status": {
-                "0": "invalid",
+                "0": "Invalid",
                 "1": "TMS1",
                 "2": "TMS2"
             }
@@ -534,10 +534,10 @@
         "60": {
             "targetColumn": "TMS1 mode command by BMS",
             "status": {
-                "0": "power off",
-                "1": "cooling mode",
-                "2": "heating mode",
-                "3": "self-circulation mode"
+                "0": "Power off",
+                "1": "Cooling mode",
+                "2": "Heating mode",
+                "3": "Self-circulation mode"
             }
         },
         "61": {
@@ -547,10 +547,10 @@
         "62": {
             "targetColumn": "TMS1 real mode",
             "status": {
-                "0": "power off",
-                "1": "cooling mode",
-                "2": "heating mode",
-                "3": "self-circulation mode"
+                "0": "Power off",
+                "1": "Cooling mode",
+                "2": "Heating mode",
+                "3": "Self-circulation mode"
             }
         },
         "63": {
@@ -587,10 +587,10 @@
         "69": {
             "targetColumn": "TMS2 mode command by BMS",
             "status": {
-                "0": "power off",
-                "1": "cooling mode",
-                "2": "heating mode",
-                "3": "self-circulation mode"
+                "0": "Power off",
+                "1": "Cooling mode",
+                "2": "Heating mode",
+                "3": "Self-circulation mode"
             }
         },
         "6A": {
@@ -600,10 +600,10 @@
         "6B": {
             "targetColumn": "TMS2 real mode",
             "status": {
-                "0": "power off",
-                "1": "cooling mode",
-                "2": "heating mode",
-                "3": "self-circulation mode"
+                "0": "Power off",
+                "1": "Cooling mode",
+                "2": "Heating mode",
+                "3": "Self-circulation mode"
             }
         },
         "6C": {
@@ -640,10 +640,10 @@
         "72": {
             "targetColumn": "TMS3 mode command by BMS",
             "status": {
-                "0": "power off",
-                "1": "cooling mode",
-                "2": "heating mode",
-                "3": "self-circulation mode"
+                "0": "Power off",
+                "1": "Cooling mode",
+                "2": "Heating mode",
+                "3": "Self-circulation mode"
             }
         },
         "73": {
@@ -653,10 +653,10 @@
         "74": {
             "targetColumn": "TMS3 real mode",
             "status": {
-                "0": "power off",
-                "1": "cooling mode",
-                "2": "heating mode",
-                "3": "self-circulation mode"
+                "0": "Power off",
+                "1": "Cooling mode",
+                "2": "Heating mode",
+                "3": "Self-circulation mode"
             }
         },
         "75": {
@@ -693,10 +693,10 @@
         "7B": {
             "targetColumn": "TMS4 mode command by BMS",
             "status": {
-                "0": "power off",
-                "1": "cooling mode",
-                "2": "heating mode",
-                "3": "self-circulation mode"
+                "0": "Power off",
+                "1": "Cooling mode",
+                "2": "Heating mode",
+                "3": "Self-circulation mode"
             }
         },
         "7C": {
@@ -706,10 +706,10 @@
         "7D": {
             "targetColumn": "TMS4 real mode",
             "status": {
-                "0": "power off",
-                "1": "cooling mode",
-                "2": "heating mode",
-                "3": "self-circulation mode"
+                "0": "Power off",
+                "1": "Cooling mode",
+                "2": "Heating mode",
+                "3": "Self-circulation mode"
             }
         },
         "7E": {
@@ -1097,8 +1097,8 @@
         "393": {
             "targetColumn": "Bytes2 of the diagnostic message sent by PC to SBMU",
             "status": {
-                "1": "read",
-                "2": "write"
+                "1": "Read",
+                "2": "Write"
             }
         },
         "394": {
@@ -1491,11 +1491,11 @@
             "conversionFactor": 0.1
         },
         "436": {
-            "targetColumn": "subsystem remain charge energy",
+            "targetColumn": "Subsystem remain charge energy",
             "conversionFactor": 0.1
         },
         "437": {
-            "targetColumn": "subsystem remain discharge energy",
+            "targetColumn": "Subsystem remain discharge energy",
             "conversionFactor": 0.1
         },
         "438": {
@@ -1570,7 +1570,7 @@
             "targetColumn": "Battery production date week"
         },
         "46e": {
-            "targetColumn": "battery production date of the week"
+            "targetColumn": "Battery production date of the week"
         },
         "480": {
             "targetColumn": "Detail message-single cell voltage",
