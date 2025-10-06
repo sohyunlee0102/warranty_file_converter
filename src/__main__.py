@@ -15,12 +15,12 @@ from utils.normalize_headers import normalizeHeaders
 
 
 def processCsvFile():
-    print("Starting CSV file processing...")
+    print("Starting CSV/Excel file processing...")
     fileManagerInstance = FileManagerService()
 
     csvPath = getCsvPath()
-    csvData = fileManagerInstance.getCsvData(csvPath)
-    print(f"Processing CSV file: {fileManagerInstance.getFileName(csvPath)}")
+    csvData = fileManagerInstance.getOriginalData(csvPath)
+    print(f"Processing CSV/Excel file: {fileManagerInstance.getFileName(csvPath)}")
 
     driverModel = getDriverModel()
     print(f"Selected Driver Model: {driverModel.name}\n")

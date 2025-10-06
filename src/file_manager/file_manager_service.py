@@ -26,16 +26,14 @@ class FileManagerService:
 
     def getOriginalData(self, filePath: str) -> DataFrame:
         extension = Path(filePath).suffix.lower()
-        print(f"📂 Reading CSV file: {filePath} ...")
+        print(f"📂 Reading CSV/Excel file: {filePath} ...")
         start = time()
 
-        if extension in {".xlsx", ".xls", ".xlsm"}:
+        if extension.endswith(".csv"):
+            data = read_csv(filePath)
+        elif extension in {".xlsx", ".xls", ".xlsm"}:
             data = read_excel(filePath, engine="openpyxl")
-            end = time()
-            print(f"✅ File read in {(end - start):4f}s (excel)")
-            return data
 
-        data = read_csv(filePath)
         end = time()
         print(f"✅ File read in {(end - start):4f}s")
 

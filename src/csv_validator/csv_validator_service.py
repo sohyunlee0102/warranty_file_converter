@@ -48,7 +48,7 @@ class CsvValidatorService:
             validationProgressBar.update(1)
             validationProgressBar.refresh()
 
-            validationProgressBar.write("✅ CSV file validation passed.")
+            validationProgressBar.write("✅ CSV/Excel file validation passed.")
 
             return True
         finally:
@@ -58,7 +58,7 @@ class CsvValidatorService:
 
     def validateFileExtension(self, filePath: str) -> bool:
         extension = Path(filePath).suffix.lower()
-        if extension not in {".csv", ".txt", ".xlsx", ".xls", ".xlsm"}:
+        if extension not in {".csv", ".xlsx", ".xls", ".xlsm"}:
             raise ValueError(f"❌ Invalid file extension: {filePath}")
 
         return True
