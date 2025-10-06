@@ -1,4 +1,5 @@
 import re
+from pathlib import Path
 
 from pandas import DataFrame, Series, Timedelta, api, to_datetime
 from tqdm import tqdm
@@ -47,7 +48,7 @@ class CsvValidatorService:
             validationProgressBar.update(1)
             validationProgressBar.refresh()
 
-            validationProgressBar.write("✅ CSV file validation passed.")
+            validationProgressBar.write("✅ CSV/Excel file validation passed.")
 
             return True
         finally:
@@ -55,11 +56,10 @@ class CsvValidatorService:
             validationProgressBar.close()
             validationProgressBar.refresh()
 
-    def validateFileExtension(self, csvPath: str) -> bool:
-        if not csvPath.lower().endswith(".csv"):
-            raise ValueError(
-                f"❌ Invalid file extension. Expected a .csv file: {csvPath}"
-            )
+    def validateFileExtension(self, filePath: str) -> bool:
+        extension = Path(filePath).suffix.lower()
+        if extension not in {".csv", ".xlsx", ".xls", ".xlsm"}:
+            raise ValueError(f"❌ Invalid file extension: {filePath}")
 
         return True
 

@@ -479,7 +479,12 @@
             "conversionFactor": 0.1
         },
         "35": {
-            "targetColumn": "Insulation detection function Status"
+            "targetColumn": "Insulation detection function Status",
+            "status": {
+                "0": "Invalid",
+                "1": "Enable",
+                "2": "Disable"
+            }
         },
         "36": {
             "targetColumn": "Pos. insulation to GND"
@@ -530,17 +535,33 @@
             "targetColumn": "Ambient humidity MBMU 6 (Reserve)"
         },
         "44": {
-            "targetColumn": "SYS SOC Maintenance Required ST"
+            "targetColumn": "SYS SOC Maintenance Required ST",
+            "status": {
+                "0": "No request",
+                "1": "Request maintenance"
+            }
         },
         "60": {
-            "targetColumn": "TMS1 mode command by BMS"
+            "targetColumn": "TMS1 mode command by BMS",
+            "status": {
+                "0": "Power off",
+                "1": "Cooling mode",
+                "2": "Heating mode",
+                "3": "Self-circulation mode"
+            }
         },
         "61": {
             "targetColumn": "TMS 1 temperature value set by BMS",
             "offset": -40
         },
         "62": {
-            "targetColumn": "TMS1 real mode"
+            "targetColumn": "TMS1 real mode",
+            "status": {
+                "0": "Power off",
+                "1": "Cooling mode",
+                "2": "Heating mode",
+                "3": "Self-circulation mode"
+            }
         },
         "63": {
             "targetColumn": "Rack inlet (TMS1 Outlet) temperature ",
@@ -558,20 +579,42 @@
             "targetColumn": "TMS1 fault code"
         },
         "67": {
-            "targetColumn": "TMS1 fault level"
+            "targetColumn": "TMS1 fault level",
+            "status": {
+                "0": "Normal",
+                "1": "TMS fault level 1",
+                "2": "TMS fault level 2",
+                "3": "TMS fault level 3"
+            }
         },
         "68": {
-            "targetColumn": "TMS1 Cooling mode protection"
+            "targetColumn": "TMS1 Cooling mode protection",
+            "status": {
+                "0": "Cooling mode is normal",
+                "1": "Cooling protection with ambient temperature exceeding 55℃ or Cooling protection with ambient temperature below -40℃"
+            }
         },
         "69": {
-            "targetColumn": "TMS2 mode command by BMS"
+            "targetColumn": "TMS2 mode command by BMS",
+            "status": {
+                "0": "Power off",
+                "1": "Cooling mode",
+                "2": "Heating mode",
+                "3": "Self-circulation mode"
+            }
         },
         "6A": {
             "targetColumn": "TMS2 temperature value set by BMS",
             "offset": -50
         },
         "6B": {
-            "targetColumn": "TMS2 real mode"
+            "targetColumn": "TMS2 real mode",
+            "status": {
+                "0": "Power off",
+                "1": "Cooling mode",
+                "2": "Heating mode",
+                "3": "Self-circulation mode"
+            }
         },
         "6C": {
             "targetColumn": "Rack inlet (TMS2 Outlet) temperature",
@@ -589,20 +632,42 @@
             "targetColumn": "TMS2 fault code"
         },
         "70": {
-            "targetColumn": "TMS2 fault level"
+            "targetColumn": "TMS2 fault level",
+            "status": {
+                "0": "Normal",
+                "1": "TMS fault level 1",
+                "2": "TMS fault level 2",
+                "3": "TMS fault level 3"
+            }
         },
         "71": {
-            "targetColumn": "TMS2 Cooling mode protection"
+            "targetColumn": "TMS2 Cooling mode protection",
+            "status": {
+                "0": "Cooling mode is normal",
+                "1": "Cooling protection with ambient temperature exceeding 55℃ or Cooling protection with ambient temperature below -40℃"
+            }
         },
         "72": {
-            "targetColumn": "TMS3 mode command by BMS"
+            "targetColumn": "TMS3 mode command by BMS",
+            "status": {
+                "0": "Power off",
+                "1": "Cooling mode",
+                "2": "Heating mode",
+                "3": "Self-circulation mode"
+            }
         },
         "73": {
             "targetColumn": "TMS3 temperature value set by BMS",
             "offset": -50
         },
         "74": {
-            "targetColumn": "TMS3 real mode"
+            "targetColumn": "TMS3 real mode",
+            "status": {
+                "0": "Power off",
+                "1": "Cooling mode",
+                "2": "Heating mode",
+                "3": "Self-circulation mode"
+            }
         },
         "75": {
             "targetColumn": "Rack inlet (TMS3 Outlet) temperature",
@@ -620,20 +685,42 @@
             "targetColumn": "TMS3 fault code"
         },
         "79": {
-            "targetColumn": "TMS3 fault level"
+            "targetColumn": "TMS3 fault level",
+            "status": {
+                "0": "Normal",
+                "1": "TMS fault level 1",
+                "2": "TMS fault level 2",
+                "3": "TMS fault level 3"
+            }
         },
         "7A": {
-            "targetColumn": "TMS3 Cooling mode protection"
+            "targetColumn": "TMS3 Cooling mode protection",
+            "status": {
+                "0": "Cooling mode is normal",
+                "1": "Cooling protection with ambient temperature exceeding 55℃ or Cooling protection with ambient temperature below -40℃"
+            }
         },
         "7B": {
-            "targetColumn": "TMS4 mode command by BMS"
+            "targetColumn": "TMS4 mode command by BMS",
+            "status": {
+                "0": "Power off",
+                "1": "Cooling mode",
+                "2": "Heating mode",
+                "3": "Self-circulation mode"
+            }
         },
         "7C": {
             "targetColumn": "TMS4 temperature value set by BMS",
             "offset": -50
         },
         "7D": {
-            "targetColumn": "TMS4 real mode"
+            "targetColumn": "TMS4 real mode",
+            "status": {
+                "0": "Power off",
+                "1": "Cooling mode",
+                "2": "Heating mode",
+                "3": "Self-circulation mode"
+            }
         },
         "7E": {
             "targetColumn": "Rack inlet (TMS4 Outlet) temperature",
@@ -651,10 +738,20 @@
             "targetColumn": "TMS4 fault code"
         },
         "82": {
-            "targetColumn": "TMS4 fault level"
+            "targetColumn": "TMS4 fault level",
+            "status": {
+                "0": "Normal",
+                "1": "TMS fault level 1",
+                "2": "TMS fault level 2",
+                "3": "TMS fault level 3"
+            }
         },
         "83": {
-            "targetColumn": "TMS4 Cooling mode protection"
+            "targetColumn": "TMS4 Cooling mode protection",
+            "status": {
+                "0": "Cooling mode is normal",
+                "1": "Cooling protection with ambient temperature exceeding 55℃ or Cooling protection with ambient temperature below -40℃"
+            }
         },
         "84": {
             "targetColumn": "TMS5 mode command by BMS"
@@ -818,10 +915,26 @@
             "targetColumn": "BMS heartbeat"
         },
         "301": {
-            "targetColumn": "BMS power on"
+            "targetColumn": "BMS power on",
+            "status": {
+                "0": "Power off ready",
+                "1": "Power on ready",
+                "2": "Power on fault",
+                "3": "Power off fault"
+            }
         },
         "302": {
-            "targetColumn": "BMS status"
+            "targetColumn": "BMS status",
+            "status": {
+                "0": "Initial status",
+                "1": "Normal status",
+                "2": "Full charge status",
+                "3": "Full discharge status",
+                "4": "Warning status",
+                "5": "Fault status",
+                "6": "Reserved",
+                "7": "Reserved"
+            }
         },
         "304": {
             "targetColumn": "Number of HV connected subsystem"
@@ -830,13 +943,25 @@
             "targetColumn": "Number of Racks"
         },
         "306": {
-            "targetColumn": "SBMU system Step-Charge Mode"
+            "targetColumn": "SBMU system Step-Charge Mode",
+            "status": {
+                "0": "Disable",
+                "1": "Enable",
+                "2": "Conflict",
+                "3": "Default"
+            }
         },
         "380": {
             "targetColumn": "EMS heartbeat"
         },
         "381": {
-            "targetColumn": "EMS_cmd"
+            "targetColumn": "EMS_cmd",
+            "status": {
+                "0": "Initial",
+                "1": "Stay status",
+                "2": "Power on cmd",
+                "3": "Power off cmd"
+            }
         },
         "382": {
             "targetColumn": "Battery system Aux power supply state"
@@ -861,25 +986,110 @@
             "targetColumn": "EMS_RTC_second"
         },
         "38A": {
-            "targetColumn": "EMS RTC CMD"
+            "targetColumn": "EMS RTC CMD",
+            "status": {
+                "0": "Reserved",
+                "1": "Write RTC",
+                "2": "Reserved"
+            }
         },
         "38B": {
-            "targetColumn": "EMS insulation switch control cmd"
+            "targetColumn": "EMS insulation switch control cmd",
+            "status": {
+                "0": "Reserved",
+                "1": "Turn on BMS insulation detection",
+                "2": "Turn off BMS insulation detection"
+            }
         },
         "38C": {
-            "targetColumn": "Fault_Clear_cmd"
+            "targetColumn": "Fault_Clear_cmd",
+            "status": {
+                "0": "Normal",
+                "1": "Fault Clear cmd"
+            }
         },
         "38D": {
-            "targetColumn": "Rack(s) disable command 1 for Rack 1-16"
+            "targetColumn": "Rack(s) disable command 1 for Rack 1-16",
+            "status": {
+                "0": "Enable",
+                "1": "Disable"
+            },
+            "bitmask": {
+                "0": "Rack 1",
+                "1": "Rack 2",
+                "2": "Rack 3",
+                "3": "Rack 4",
+                "4": "Rack 5",
+                "5": "Rack 6",
+                "6": "Rack 7",
+                "7": "Rack 8",
+                "8": "Rack 9",
+                "9": "Rack 10",
+                "10": "Rack 11",
+                "11": "Rack 12",
+                "12": "Rack 13",
+                "13": "Rack 14",
+                "14": "Rack 15",
+                "15": "Rack 16"
+            }
         },
         "38E": {
-            "targetColumn": "Rack(s) disable command 2 for Rack 17-32"
+            "targetColumn": "Rack(s) disable command 2 for Rack 17-32",
+            "status": {
+                "0": "Enable",
+                "1": "Disable"
+            },
+            "bitmask": {
+                "0": "Rack 17",
+                "1": "Rack 18",
+                "2": "Rack 19",
+                "3": "Rack 20",
+                "4": "Rack 21",
+                "5": "Rack 22",
+                "6": "Rack 23",
+                "7": "Rack 24",
+                "8": "Rack 25",
+                "9": "Rack 26",
+                "10": "Rack 27",
+                "11": "Rack 28",
+                "12": "Rack 29",
+                "13": "Rack 30",
+                "14": "Rack 31",
+                "15": "Rack 32"
+            }
         },
         "38F": {
-            "targetColumn": "Rack(s) disable command 3 for Rack 33-48"
+            "targetColumn": "Rack(s) disable command 3 for Rack 33-48",
+            "status": {
+                "0": "Enable",
+                "1": "Disable"
+            },
+            "bitmask": {
+                "0": "Rack 33",
+                "1": "Rack 34",
+                "2": "Rack 35",
+                "3": "Rack 36",
+                "4": "Rack 37",
+                "5": "Rack 38",
+                "6": "Rack 39",
+                "7": "Rack 40",
+                "8": "Rack 41",
+                "9": "Rack 42",
+                "10": "Rack 43",
+                "11": "Rack 44",
+                "12": "Rack 45",
+                "13": "Rack 46",
+                "14": "Rack 47",
+                "15": "Rack 48"
+            }
         },
         "390": {
-            "targetColumn": "Step-Charge Switch"
+            "targetColumn": "Step-Charge Switch",
+            "status": {
+                "0": "Default",
+                "1": "Disable step-charge",
+                "2": "Enable step-charge"
+            }
         }
     },
     "SBMU": {
@@ -1156,22 +1366,46 @@
             }
         },
         "410": {
-            "targetColumn": "Pre charge relay status"
+            "targetColumn": "Pre charge relay status",
+            "status": {
+                "0": "Open",
+                "1": "Close"
+            }
         },
         "411": {
-            "targetColumn": "Master positive relay status"
+            "targetColumn": "Master positive relay status",
+            "status": {
+                "0": "Open",
+                "1": "Close"
+            }
         },
         "412": {
-            "targetColumn": "Master negative relay status"
+            "targetColumn": "Master negative relay status",
+            "status": {
+                "0": "Open",
+                "1": "Close"
+            }
         },
         "413": {
-            "targetColumn": "High voltage online status"
+            "targetColumn": "High voltage online status",
+            "status": {
+                "0": "Off",
+                "1": "On"
+            }
         },
         "414": {
-            "targetColumn": "BAT SOC Maintenance Required ST"
+            "targetColumn": "BAT SOC Maintenance Required ST",
+            "status": {
+                "0": "No request",
+                "1": "Request maintenance"
+            }
         },
         "415": {
-            "targetColumn": "Rack Step-Charge status"
+            "targetColumn": "Rack Step-Charge status",
+            "status": {
+                "0": "Disable",
+                "1": "Enable"
+            }
         },
         "420": {
             "targetColumn": "Battery Subsystem Voltage",
@@ -1264,11 +1498,11 @@
             "conversionFactor": 0.1
         },
         "436": {
-            "targetColumn": "subsystem remain charge energy",
+            "targetColumn": "Subsystem remain charge energy",
             "conversionFactor": 0.1
         },
         "437": {
-            "targetColumn": "subsystem remain discharge energy",
+            "targetColumn": "Subsystem remain discharge energy",
             "conversionFactor": 0.1
         },
         "438": {
@@ -1276,14 +1510,26 @@
             "conversionFactor": 0.1
         },
         "448": {
-            "targetColumn": "TMS mode command by BMS"
+            "targetColumn": "TMS mode command by BMS",
+            "status": {
+                "0": "Power off",
+                "1": "Cooling mode",
+                "2": "Heating mode",
+                "3": "Self-circulation mode"
+            }
         },
         "449": {
             "targetColumn": "TMS temperature value set by BMS",
             "offset": -50
         },
         "44A": {
-            "targetColumn": "TMS real mode"
+            "targetColumn": "TMS real mode",
+            "status": {
+                "0": "Power off",
+                "1": "Cooling mode",
+                "2": "Heating mode",
+                "3": "Self-circulation mode"
+            }
         },
         "44B": {
             "targetColumn": "Rack inlet(TMS Outlet) temperature",

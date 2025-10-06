@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 from time import time
 
-from pandas import DataFrame, ExcelWriter, read_csv
+from pandas import DataFrame, ExcelWriter, read_csv, read_excel
 from tqdm import tqdm
 
 INVALID_CHARS = r'<>:"/\\|?*'
@@ -24,10 +24,16 @@ class FileManagerService:
     def getFileName(self, filePath: str) -> str:
         return os.path.basename(filePath)
 
-    def getCsvData(self, csvPath: str) -> DataFrame:
-        print(f"📂 Reading CSV file: {csvPath} ...")
+    def getOriginalData(self, filePath: str) -> DataFrame:
+        extension = Path(filePath).suffix.lower()
+        print(f"📂 Reading CSV/Excel file: {filePath} ...")
         start = time()
-        data = read_csv(csvPath)
+
+        if extension.endswith(".csv"):
+            data = read_csv(filePath)
+        elif extension in {".xlsx", ".xls", ".xlsm"}:
+            data = read_excel(filePath, engine="openpyxl")
+
         end = time()
         print(f"✅ File read in {(end - start):4f}s")
 

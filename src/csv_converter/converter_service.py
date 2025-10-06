@@ -10,8 +10,10 @@ from model.driver_config.driver_configuration_dto import (
 )
 from model.driver_config.register_description_dto import (
     AlarmRegisterDescriptionDto,
+    StatusRegisterDescriptionDto,
     ValueRegisterDescriptionDto,
 )
+from status_translator.status_translator_service import StatusTranslatorService
 from utils.catl_sbmu_offset_register_const import CATL_SBMU_OFFSET_REGISTER
 from value_translator.value_translator_service import ValueTranslatorService
 
@@ -79,7 +81,18 @@ class ConverterService:
             translator = ValueTranslatorService(
                 columnInfo, columnConfig.offset, columnConfig.conversionFactor
             )
-            newColumn = concat([subColumnNameSeries, translator.translateColumn()])
+            translatedSeries = translator.translateColumn()
+            newColumn = concat([subColumnNameSeries, translatedSeries])
+        elif isinstance(columnConfig, StatusRegisterDescriptionDto):
+            statusLookup = getattr(columnConfig, "status", None)
+            bitmaskLookup = getattr(columnConfig, "bitmask", None)
+            mappedSeries = StatusTranslatorService(
+                columnInfo,
+                statusLookup=statusLookup or {},
+                bitmaskLookup=bitmaskLookup or {},
+            ).translateColumn()
+            newColumn = concat([subColumnNameSeries, mappedSeries])
+
         elif isinstance(columnConfig, AlarmRegisterDescriptionDto):
             translator = AlarmTranslatorService(
                 columnInfo, columnConfig.alarmBitLength, columnConfig.alarmMap
