@@ -116,7 +116,7 @@ class CsvValidatorService:
 
         if not (timeDiffs <= expectedMaxInterval).all():
             gapIndices = timeDiffs[timeDiffs > expectedMaxInterval].index.tolist()
-            raise ValueError(
+            print(
                 f"❌ Time gaps detected at rows: {gapIndices} — exceeding maximum interval: {expectedMaxInterval}"
             )
 

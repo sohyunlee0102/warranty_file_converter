@@ -1,0 +1,781 @@
+{
+    "timeMaxIntervalInSeconds": 6,
+    "MBMU": {
+        "DATE": {
+            "required": true,
+            "targetColumn": "Date timestamp"
+        },
+        "0": {
+            "required": true,
+            "targetColumn": "Battery aux power E4W",
+            "conversionFactor": 0.01
+        },
+        "1": {
+            "required": true,
+            "targetColumn": "Battery system warnings1",
+            "alarmBitLength": 1,
+            "alarmMap": {
+                "0": {
+                    "0": "Normal",
+                    "1": "Cell voltage upper limit alarm"
+                },
+                "1": {
+                    "0": "Normal",
+                    "1": "Cell voltage upper limit protection"
+                },
+                "2": {
+                    "0": "Normal",
+                    "1": "Cell voltage lower limit alarm"
+                },
+                "3": {
+                    "0": "Normal",
+                    "1": "Cell voltage lower limit protection"
+                },
+                "4": {
+                    "0": "Normal",
+                    "1": "Cell temperature upper limit alarm"
+                },
+                "5": {
+                    "0": "Normal",
+                    "1": "Cell temperature upper limit protection"
+                },
+                "6": {
+                    "0": "Normal",
+                    "1": "Cell temperature Lower limit alarm"
+                },
+                "7": {
+                    "0": "Normal",
+                    "1": "Cell temperature Lower limit protection"
+                },
+                "8": {
+                    "0": "Normal",
+                    "1": "Cell SOC upper limit alarm"
+                },
+                "9": {
+                    "0": "Normal",
+                    "1": "Cell SOC upper limit protection"
+                },
+                "10": {
+                    "0": "Normal",
+                    "1": "Cell SOC lower limit alarm"
+                },
+                "11": {
+                    "0": "Normal",
+                    "1": "Cell SOC lower limit protection"
+                },
+                "12": {
+                    "0": "Normal",
+                    "1": "Cell SOH lower limit alarm"
+                },
+                "13": {
+                    "0": "Normal",
+                    "1": "Cell SOH lower limit protection"
+                },
+                "14": {
+                    "0": "Normal",
+                    "1": "Positive electrolyte fault"
+                },
+                "15": {
+                    "0": "Normal",
+                    "1": "Negative electrolyte fault"
+                }
+            }
+        },
+        "2": {
+            "required": true,
+            "targetColumn": "Battery system warnings2",
+            "alarmBitLength": 1,
+            "alarmMap": {
+                "0": {
+                    "0": "Normal",
+                    "1": "Cell charging temperature upper limit alarm"
+                },
+                "1": {
+                    "0": "Normal",
+                    "1": "Cell charging temperature upper limit protection"
+                },
+                "2": {
+                    "0": "Normal",
+                    "1": "Cell charging temperature lower limit alarm"
+                },
+                "3": {
+                    "0": "Normal",
+                    "1": "Cell charging temperature lower limit protection"
+                },
+                "4": {
+                    "0": "Normal",
+                    "1": "Cell discharging temperature upper limit alarm"
+                },
+                "5": {
+                    "0": "Normal",
+                    "1": "Cell discharging temperature upper limit protection"
+                },
+                "6": {
+                    "0": "Normal",
+                    "1": "Cell discharging temperature lower limit alarm"
+                },
+                "7": {
+                    "0": "Normal",
+                    "1": "Cell discharging temperature lower limit protection"
+                },
+                "8": {
+                    "0": "Normal",
+                    "1": "PACK voltage upper limit alarm"
+                },
+                "9": {
+                    "0": "Normal",
+                    "1": "PACK voltage upper limit protection"
+                },
+                "10": {
+                    "0": "Normal",
+                    "1": "PACK voltage lower limit alarm"
+                },
+                "11": {
+                    "0": "Normal",
+                    "1": "PACK voltage lower limit alarm"
+                },
+                "12": {
+                    "0": "Normal",
+                    "1": "Group voltage upper limit alarm"
+                },
+                "13": {
+                    "0": "Normal",
+                    "1": "Group voltage upper limit cut off"
+                },
+                "14": {
+                    "0": "Normal",
+                    "1": "Group voltage lower limit alarm"
+                },
+                "15": {
+                    "0": "Normal",
+                    "1": "Group voltage lower limit cut off"
+                }
+            }
+        },
+        "3": {
+            "required": true,
+            "targetColumn": "Battery system warnings3",
+            "alarmBitLength": 1,
+            "alarmMap": {
+                "0": {
+                    "0": "Normal",
+                    "1": "Group charging current upper limit alarm"
+                },
+                "1": {
+                    "0": "Normal",
+                    "1": "Group charging current upper limit cut off"
+                },
+                "2": {
+                    "0": "Normal",
+                    "1": "Group discharging current upper limit alarm"
+                },
+                "3": {
+                    "0": "Normal",
+                    "1": "Group discharging current upper limit cut off"
+                },
+                "4": {
+                    "0": "Normal",
+                    "1": "Group temperature upper limit alarm"
+                },
+                "5": {
+                    "0": "Normal",
+                    "1": "Group temperature upper limit cut off"
+                },
+                "6": {
+                    "0": "Normal",
+                    "1": "Group temperature lower limit alarm"
+                },
+                "7": {
+                    "0": "Normal",
+                    "1": "Group temperature lower limit cut off"
+                },
+                "8": {
+                    "0": "Normal",
+                    "1": "Insulation resistance alarm"
+                },
+                "9": {
+                    "0": "Normal",
+                    "1": "Insulation resistance cut off"
+                },
+                "10": {
+                    "0": "Normal",
+                    "1": "Communication"
+                },
+                "11": {
+                    "0": "Normal",
+                    "1": "Adhesion fault"
+                },
+                "12": {
+                    "0": "Normal",
+                    "1": "Cell voltage upper limit early warning"
+                },
+                "13": {
+                    "0": "Normal",
+                    "1": "Cell voltage lower limit early warning"
+                },
+                "14": {
+                    "0": "Normal",
+                    "1": "Cell SOC upper limit early warning"
+                },
+                "15": {
+                    "0": "Normal",
+                    "1": "Cell SOC lower limit early warning"
+                }
+            }
+        },
+        "4": {
+            "required": true,
+            "targetColumn": "Battery system warnings4",
+            "alarmBitLength": 1,
+            "alarmMap": {
+                "0": {
+                    "0": "Normal",
+                    "1": "Cell charging temperature upper limit warning"
+                },
+                "1": {
+                    "0": "Normal",
+                    "1": "Cell charging temperature lower limit warning"
+                },
+                "2": {
+                    "0": "Normal",
+                    "1": "Cell discharging temperature upper limit early warning"
+                },
+                "3": {
+                    "0": "Normal",
+                    "1": "Cell discharging temperature lower limit early warning"
+                },
+                "4": {
+                    "0": "Normal",
+                    "1": "Group voltage upper limit early warning"
+                },
+                "5": {
+                    "0": "Normal",
+                    "1": "Group voltage lower limit early warning"
+                },
+                "6": {
+                    "0": "Normal",
+                    "1": "Group charging current upper limit early warning"
+                },
+                "7": {
+                    "0": "Normal",
+                    "1": "Group discharging current upper limit early warning"
+                },
+                "8": {
+                    "0": "Normal",
+                    "1": "Group temperature upper limit early warning"
+                },
+                "9": {
+                    "0": "Normal",
+                    "1": "Group temperature lower limit early warning"
+                },
+                "10": {
+                    "0": "Normal",
+                    "1": "PACK voltage upper limit early warning"
+                },
+                "11": {
+                    "0": "Normal",
+                    "1": "PACK voltage lower limit early warning"
+                },
+                "12": {
+                    "0": "Normal",
+                    "1": "Power line temperature upper limit early warning"
+                },
+                "13": {
+                    "0": "Normal",
+                    "1": "Power line temperature lower limit early warning"
+                },
+                "14": {
+                    "0": "Normal",
+                    "1": "Cell voltage difference upper limit early warning"
+                },
+                "15": {
+                    "0": "Normal",
+                    "1": "Cell temperature difference upper limit early warning"
+                }
+            }
+        },
+        "5": {
+            "required": true,
+            "targetColumn": "Battery system warnings5",
+            "alarmBitLength": 1,
+            "alarmMap": {
+                "0": {
+                    "0": "Normal",
+                    "1": "PACK voltage difference upper limit early warning"
+                },
+                "1": {
+                    "0": "Normal",
+                    "1": "PACK voltage difference upper limit alarm"
+                },
+                "2": {
+                    "0": "Normal",
+                    "1": "PACK voltage difference upper limit protection"
+                },
+                "3": {
+                    "0": "Normal",
+                    "1": "Fan abnormality"
+                },
+                "4": {
+                    "0": "Normal",
+                    "1": "Insulation early warning"
+                },
+                "5": {
+                    "0": "Normal",
+                    "1": "Cell voltage invalid alarm"
+                },
+                "6": {
+                    "0": "Normal",
+                    "1": "Cell temperature invalid alarm"
+                },
+                "7": {
+                    "0": "Normal",
+                    "1": "Group SOC upper limit alarm"
+                },
+                "8": {
+                    "0": "Normal",
+                    "1": "Group SOC upper limit protection"
+                },
+                "9": {
+                    "0": "Normal",
+                    "1": "Group SOC lower limit alarm"
+                },
+                "10": {
+                    "0": "Normal",
+                    "1": "Group SOC lower limit protection"
+                },
+                "11": {
+                    "0": "Normal",
+                    "1": "Power line temperature upper limit alarm"
+                },
+                "12": {
+                    "0": "Normal",
+                    "1": "Power line temperature lower limit alarm"
+                },
+                "13": {
+                    "0": "Normal",
+                    "1": "Power line temperature upper limit protection"
+                },
+                "14": {
+                    "0": "Normal",
+                    "1": "Power line temperature lower limit protection"
+                },
+                "15": {
+                    "0": "Normal",
+                    "1": "Cell voltage difference upper limit alarm"
+                }
+            }
+        },
+        "6": {
+            "required": true,
+            "targetColumn": "Battery system warnings6",
+            "alarmBitLength": 1,
+            "alarmMap": {
+                "0": {
+                    "0": "Normal",
+                    "1": "Cell voltage difference upper limit protection"
+                },
+                "1": {
+                    "0": "Normal",
+                    "1": "Cell temperature difference upper limit alarm"
+                },
+                "2": {
+                    "0": "Normal",
+                    "1": "Cell temperature difference upper limit protection"
+                },
+                "3": {
+                    "0": "Normal",
+                    "1": "Group SOC upper limit early warning"
+                },
+                "4": {
+                    "0": "Normal",
+                    "1": "Group SOC lower limit early warning"
+                },
+                "5": {
+                    "0": "Normal",
+                    "1": "BMS and EMS communication status"
+                },
+                "6": {
+                    "0": "Normal",
+                    "1": "Water valve overpressure fault"
+                },
+                "7": {
+                    "0": "Normal",
+                    "1": "Water valve overcurrent fault"
+                },
+                "8": {
+                    "0": "Normal",
+                    "1": "Water valve overheat fault"
+                },
+                "9": {
+                    "0": "Normal",
+                    "1": "Water valve undervoltage fault"
+                },
+                "10": {
+                    "0": "Normal",
+                    "1": "Water valve blockage fault"
+                },
+                "11": {
+                    "0": "Normal",
+                    "1": "AC fault"
+                },
+                "12": {
+                    "0": "Normal",
+                    "1": "CAN communication anomaly"
+                },
+                "13": {
+                    "0": "Normal",
+                    "1": "K2 relay fault"
+                },
+                "14": {
+                    "0": "Normal",
+                    "1": "DCDC fault"
+                },
+                "15": {
+                    "0": "Normal",
+                    "1": "Fan fault"
+                }
+            }
+        },
+        "7": {
+            "required": true,
+            "targetColumn": "Battery system warnings7",
+            "alarmMap": {
+                "0": {
+                    "0": "Normal",
+                    "1": "High voltage sensor fault"
+                },
+                "1": {
+                    "0": "Normal",
+                    "1": "High voltage over high"
+                },
+                "2": {
+                    "0": "Normal",
+                    "1": "Low voltage sensor fault"
+                },
+                "3": {
+                    "0": "Normal",
+                    "1": "Low voltage too low refrigerant leak"
+                },
+                "4": {
+                    "0": "Normal",
+                    "1": "Water outlet temperature sensor fault"
+                },
+                "5": {
+                    "0": "Normal",
+                    "1": "Water inlet temperature sensor fault"
+                },
+                "6": {
+                    "0": "Normal",
+                    "1": "Water pump fault"
+                },
+                "7": {
+                    "0": "Normal",
+                    "1": "Water inlet pressure sensor fault"
+                },
+                "8": {
+                    "0": "Normal",
+                    "1": "Environmental temperature sensor fault"
+                },
+                "9": {
+                    "0": "Normal",
+                    "1": "AC communication loss fault"
+                },
+                "10": {
+                    "0": "Normal",
+                    "1": "AC compressor controller fault"
+                },
+                "11": {
+                    "0": "Normal",
+                    "1": "PTC overtemperature fault"
+                },
+                "12": {
+                    "0": "Normal",
+                    "1": "Water outlet pressure sensor fault"
+                },
+                "13": {
+                    "0": "Normal",
+                    "1": "Water inlet and outlet pressure differential fault"
+                },
+                "14": {
+                    "0": "Normal",
+                    "1": "High pressure switch fault"
+                },
+                "15": {
+                    "0": "Normal",
+                    "1": "Water valve fault"
+                }
+            }
+        },
+        "8": {
+            "required": true,
+            "targetColumn": "Battery system warnings8",
+            "alarmMap": {
+                "0": {
+                    "0": "Normal",
+                    "1": "Lightning protection signals"
+                },
+                "1": {
+                    "0": "Normal",
+                    "1": "Flood signal"
+                },
+                "2": {
+                    "0": "Normal",
+                    "1": "Emergency stop button"
+                },
+                "3": {
+                    "0": "Normal",
+                    "1": "Access control signal"
+                },
+                "4": {
+                    "0": "Normal",
+                    "1": "Smoke signal"
+                },
+                "5": {
+                    "0": "Normal",
+                    "1": "Fire signal"
+                },
+                "6": {
+                    "0": "Normal",
+                    "1": "Exhaust valve activation"
+                },
+                "7": {
+                    "0": "Normal",
+                    "1": "Temperature sensor signal"
+                },
+                "8": {
+                    "0": "Normal"
+                },
+                "9": {
+                    "0": "Normal"
+                },
+                "10": {
+                    "0": "Normal"
+                },
+                "11": {
+                    "0": "Normal"
+                },
+                "12": {
+                    "0": "Normal"
+                },
+                "13": {
+                    "0": "Normal"
+                },
+                "14": {
+                    "0": "Normal"
+                },
+                "15": {
+                    "0": "Normal"
+                }
+            }
+        },
+        "9": {
+            "required": true,
+            "targetColumn": "Battery system voltage V"
+        },
+        "A": {
+            "required": true,
+            "targetColumn": "Battery system current A"
+        },
+        "B": {
+            "required": true,
+            "targetColumn": "Battery system SOC percentage"
+        },
+        "C": {
+            "required": true,
+            "targetColumn": "Battery system SOH percentage"
+        },
+        "D": {
+            "required": true,
+            "targetColumn": "Battery system maximum single cell voltage V",
+            "conversionFactor": 0.01
+        },
+        "E": {
+            "required": true,
+            "targetColumn": "Battery system minimum single cell voltage V",
+            "conversionFactor": 0.01
+        },
+        "F": {
+            "required": true,
+            "targetColumn": "Battery system average single cell voltage V",
+            "conversionFactor": 0.01
+        },
+        "10": {
+            "required": true,
+            "targetColumn": "Battery system maximum single cell temperature celsius",
+            "conversionFactor": 0.1
+        },
+        "11": {
+            "required": true,
+            "targetColumn": "Battery system minimum single cell temperature celsius",
+            "conversionFactor": 0.1
+        },
+        "12": {
+            "required": true,
+            "targetColumn": "Battery system average single cell temperature celsius",
+            "conversionFactor": 0.1
+        },
+        "13": {
+            "required": true,
+            "targetColumn": "Battery system cooling operating status",
+            "status": {
+                "0": "Stop",
+                "1": "Internal circulation",
+                "2": "Cooling",
+                "3": "Heating"
+            }
+        },
+        "14": {
+            "required": true,
+            "targetColumn": "Battery system cooling setpoint celsius",
+            "conversionFactor": 0.1
+        },
+        "15": {
+            "required": true,
+            "targetColumn": "Battery system heating setpoint celsius",
+            "conversionFactor": 0.1
+        },
+        "16": {
+            "required": true,
+            "targetColumn": "Battery system TMS outlet celsius",
+            "conversionFactor": 0.1
+        },
+        "17": {
+            "required": true,
+            "targetColumn": "Battery system TMS inlet celsius",
+            "conversionFactor": 0.1
+        },
+        "18": {
+            "required": true,
+            "targetColumn": "Battery system TMS environment celsius",
+            "conversionFactor": 0.1
+        },
+        "19": {
+            "required": true,
+            "targetColumn": "Battery system light alarms"
+        },
+        "1A": {
+            "required": true,
+            "targetColumn": "Battery system fire alarms"
+        },
+        "1B": {
+            "required": true,
+            "targetColumn": "Battery system flood alarms"
+        },
+        "1C": {
+            "required": true,
+            "targetColumn": "Battery system EPO Button"
+        },
+        "20": {
+            "required": true,
+            "targetColumn": "Battery subsystem voltage BMU1 V"
+        },
+        "21": {
+            "required": true,
+            "targetColumn": "Battery subsystem current BMU1 A"
+        },
+        "22": {
+            "required": true,
+            "targetColumn": "Battery subsystem SOC BMU1 percentage"
+        },
+        "23": {
+            "required": true,
+            "targetColumn": "Battery subsystem SOH BMU1 percentage"
+        },
+        "24": {
+            "required": true,
+            "targetColumn": "Battery subsystem maximum single cell voltage BMU1 V",
+            "conversionFactor": 0.01
+        },
+        "25": {
+            "required": true,
+            "targetColumn": "Battery subsystem minimum single cell voltage BMU1 V",
+            "conversionFactor": 0.01
+        },
+        "26": {
+            "required": true,
+            "targetColumn": "Battery subsystem average single cell voltage BMU1 V",
+            "conversionFactor": 0.01
+        },
+        "27": {
+            "required": true,
+            "targetColumn": "Battery subsystem maximum single cell temperature BMU1 celsius",
+            "conversionFactor": 0.1
+        },
+        "28": {
+            "required": true,
+            "targetColumn": "Battery subsystem minimum single cell temperature BMU1 celsius",
+            "conversionFactor": 0.1
+        },
+        "29": {
+            "required": true,
+            "targetColumn": "Battery subsystem average single cell temperature BMU1 celsius",
+            "conversionFactor": 0.1
+        },
+        "2A": {
+            "required": true,
+            "targetColumn": "Battery subsystem maximum single cell voltage position BMU1"
+        },
+        "2B": {
+            "required": true,
+            "targetColumn": "Battery subsystem minimum single cell voltage position BMU1"
+        },
+        "2C": {
+            "required": true,
+            "targetColumn": "Battery subsystem maximum single cell temperature position BMU1"
+        },
+        "2D": {
+            "required": true,
+            "targetColumn": "Battery subsystem minimum single cell temperature position BMU1"
+        },
+        "2E": {
+            "required": true,
+            "targetColumn": "Battery subsystem sum of cell voltage BMU1 V"
+        },
+        "2F": {
+            "required": true,
+            "targetColumn": "Battery subsystem cooling operating status BMU1",
+            "status": {
+                "0": "Stop",
+                "1": "Internal circulation",
+                "2": "Cooling",
+                "3": "Heating"
+            }
+        },
+        "30": {
+            "required": true,
+            "targetColumn": "Battery subsystem cooling setpoint BMU1 celsius"
+        },
+        "31": {
+            "required": true,
+            "targetColumn": "Battery subsystem heating setpoint BMU1 celsius"
+        },
+        "32": {
+            "required": true,
+            "targetColumn": "Battery subsystem TMS outlet BMU1 celsius"
+        },
+        "33": {
+            "required": true,
+            "targetColumn": "Battery subsystem TMS inlet BMU1 celsius"
+        },
+        "34": {
+            "required": true,
+            "targetColumn": "Battery subsystem TMS environment BMU1 celsius"
+        },
+        "35": {
+            "required": true,
+            "targetColumn": "Battery subsystem light alarms BMU1"
+        },
+        "36": {
+            "required": true,
+            "targetColumn": "Battery subsystem fire alarms BMU1"
+        },
+        "37": {
+            "required": true,
+            "targetColumn": "Battery subsystem flood alarms BMU1"
+        },
+        "38": {
+            "required": true,
+            "targetColumn": "Battery subsystem EPO button BMU1"
+        }
+    }
+}
