@@ -2,7 +2,7 @@ import json
 import os
 import sys
 
-from model.catl_battery_models_enum import ECatlBatteryModels
+from model.catl_battery_models_enum import EBatteryModels
 from model.driver_config.driver_configuration_dto import DriverConfigurationDto
 from model.driver_config.register_description_dto import (
     AlarmRegisterDescriptionDto,
@@ -49,7 +49,7 @@ def _buildRegisterDescription(value: dict) -> RegisterDescriptionDto:
     )
 
 
-def getDriverConfiguration(driverModel: ECatlBatteryModels) -> DriverConfigurationDto:
+def getDriverConfiguration(driverModel: EBatteryModels) -> DriverConfigurationDto:
     configPath = DRIVER_CONFIG_PATHS.get(driverModel)
 
     if not configPath:
