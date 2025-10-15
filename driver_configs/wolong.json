@@ -665,6 +665,14 @@
             "required": true,
             "targetColumn": "Battery system EPO Button"
         },
+        "1D": {
+            "required": false,
+            "targetColumn": "Battery system current allowed maximum charge current"
+        },
+        "1E": {
+            "required": false,
+            "targetColumn": "Battery system current allowed maximum discharge current"
+        },
         "20": {
             "required": true,
             "targetColumn": "Battery subsystem voltage BMU1 V"
