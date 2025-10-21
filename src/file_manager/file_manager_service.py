@@ -40,15 +40,16 @@ class FileManagerService:
         return data
 
     def saveXlsx(self, csvPath, start, dataframeList):
-        filename = Path(self.getFileName(csvPath))
-        newFileName = filename.stem + "_converted.xlsx"
-
-        self.__validateFileName(newFileName)
+        filePath = Path(csvPath)
+        fileName = Path(self.getFileName(csvPath))
+        newFileName = fileName.stem + "_converted.xlsx"
+        newFilePath = filePath.parent / newFileName
+        self.__validateFileName(str(newFileName))
 
         writingProgressBar = tqdm(
             total=len(dataframeList), desc="Writing Excel sheets", leave=False
         )
-        with ExcelWriter(newFileName) as writer:
+        with ExcelWriter(newFilePath) as writer:
             for dataFrame in dataframeList:
                 dataFrame.to_excel(writer, index=False, sheet_name=dataFrame.Name)
                 writingProgressBar.update(1)
