@@ -26,9 +26,10 @@ def processCsvFile():
 
     if os.path.isdir(inputPath):
         for extension in ("*.csv", "*.xlsx", "*.xls", "*.xlsm"):
-            fileList.extend(
-                str(filePath) for filePath in Path(inputPath).glob(extension)
-            )
+            for filePath in Path(inputPath).glob(extension):
+                fileName = filePath.name.lower()
+                if not fileName.startswith("~$") and "_converted" not in fileName:
+                    fileList.append(str(filePath))
         if not fileList:
             print("❌ No CSV/Excel files found in the folder.")
             return
