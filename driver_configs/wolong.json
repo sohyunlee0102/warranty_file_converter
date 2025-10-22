@@ -6,7 +6,7 @@
             "targetColumn": "Date timestamp"
         },
         "0": {
-            "required": true,
+            "required": false,
             "targetColumn": "Battery aux power E4W",
             "conversionFactor": 0.01
         },
@@ -82,7 +82,7 @@
             }
         },
         "2": {
-            "required": true,
+            "required": false,
             "targetColumn": "Battery system warnings2",
             "alarmBitLength": 1,
             "alarmMap": {
@@ -153,7 +153,7 @@
             }
         },
         "3": {
-            "required": true,
+            "required": false,
             "targetColumn": "Battery system warnings3",
             "alarmBitLength": 1,
             "alarmMap": {
@@ -224,7 +224,7 @@
             }
         },
         "4": {
-            "required": true,
+            "required": false,
             "targetColumn": "Battery system warnings4",
             "alarmBitLength": 1,
             "alarmMap": {
@@ -295,7 +295,7 @@
             }
         },
         "5": {
-            "required": true,
+            "required": false,
             "targetColumn": "Battery system warnings5",
             "alarmBitLength": 1,
             "alarmMap": {
@@ -366,7 +366,7 @@
             }
         },
         "6": {
-            "required": true,
+            "required": false,
             "targetColumn": "Battery system warnings6",
             "alarmBitLength": 1,
             "alarmMap": {
@@ -437,7 +437,7 @@
             }
         },
         "7": {
-            "required": true,
+            "required": false,
             "targetColumn": "Battery system warnings7",
             "alarmMap": {
                 "0": {
@@ -507,7 +507,7 @@
             }
         },
         "8": {
-            "required": true,
+            "required": false,
             "targetColumn": "Battery system warnings8",
             "alarmMap": {
                 "0": {
@@ -569,33 +569,33 @@
             }
         },
         "9": {
-            "required": true,
+            "required": false,
             "targetColumn": "Battery system voltage V"
         },
         "A": {
-            "required": true,
+            "required": false,
             "targetColumn": "Battery system current A"
         },
         "B": {
-            "required": true,
+            "required": false,
             "targetColumn": "Battery system SOC percentage"
         },
         "C": {
-            "required": true,
+            "required": false,
             "targetColumn": "Battery system SOH percentage"
         },
         "D": {
-            "required": true,
+            "required": false,
             "targetColumn": "Battery system maximum single cell voltage V",
             "conversionFactor": 0.01
         },
         "E": {
-            "required": true,
+            "required": false,
             "targetColumn": "Battery system minimum single cell voltage V",
             "conversionFactor": 0.01
         },
         "F": {
-            "required": true,
+            "required": false,
             "targetColumn": "Battery system average single cell voltage V",
             "conversionFactor": 0.01
         },
@@ -605,17 +605,17 @@
             "conversionFactor": 0.1
         },
         "11": {
-            "required": true,
+            "required": false,
             "targetColumn": "Battery system minimum single cell temperature celsius",
             "conversionFactor": 0.1
         },
         "12": {
-            "required": true,
+            "required": false,
             "targetColumn": "Battery system average single cell temperature celsius",
             "conversionFactor": 0.1
         },
         "13": {
-            "required": true,
+            "required": false,
             "targetColumn": "Battery system cooling operating status",
             "status": {
                 "0": "Stop",
@@ -625,44 +625,44 @@
             }
         },
         "14": {
-            "required": true,
+            "required": false,
             "targetColumn": "Battery system cooling setpoint celsius",
             "conversionFactor": 0.1
         },
         "15": {
-            "required": true,
+            "required": false,
             "targetColumn": "Battery system heating setpoint celsius",
             "conversionFactor": 0.1
         },
         "16": {
-            "required": true,
+            "required": false,
             "targetColumn": "Battery system TMS outlet celsius",
             "conversionFactor": 0.1
         },
         "17": {
-            "required": true,
+            "required": false,
             "targetColumn": "Battery system TMS inlet celsius",
             "conversionFactor": 0.1
         },
         "18": {
-            "required": true,
+            "required": false,
             "targetColumn": "Battery system TMS environment celsius",
             "conversionFactor": 0.1
         },
         "19": {
-            "required": true,
+            "required": false,
             "targetColumn": "Battery system light alarms"
         },
         "1A": {
-            "required": true,
+            "required": false,
             "targetColumn": "Battery system fire alarms"
         },
         "1B": {
-            "required": true,
+            "required": false,
             "targetColumn": "Battery system flood alarms"
         },
         "1C": {
-            "required": true,
+            "required": false,
             "targetColumn": "Battery system EPO Button"
         },
         "1D": {
@@ -728,19 +728,19 @@
             "targetColumn": "Battery subsystem minimum single cell voltage position BMU1"
         },
         "2C": {
-            "required": true,
+            "required": false,
             "targetColumn": "Battery subsystem maximum single cell temperature position BMU1"
         },
         "2D": {
-            "required": true,
+            "required": false,
             "targetColumn": "Battery subsystem minimum single cell temperature position BMU1"
         },
         "2E": {
-            "required": true,
+            "required": false,
             "targetColumn": "Battery subsystem sum of cell voltage BMU1 V"
         },
         "2F": {
-            "required": true,
+            "required": false,
             "targetColumn": "Battery subsystem cooling operating status BMU1",
             "status": {
                 "0": "Stop",
@@ -750,39 +750,39 @@
             }
         },
         "30": {
-            "required": true,
+            "required": false,
             "targetColumn": "Battery subsystem cooling setpoint BMU1 celsius"
         },
         "31": {
-            "required": true,
+            "required": false,
             "targetColumn": "Battery subsystem heating setpoint BMU1 celsius"
         },
         "32": {
-            "required": true,
+            "required": false,
             "targetColumn": "Battery subsystem TMS outlet BMU1 celsius"
         },
         "33": {
-            "required": true,
+            "required": false,
             "targetColumn": "Battery subsystem TMS inlet BMU1 celsius"
         },
         "34": {
-            "required": true,
+            "required": false,
             "targetColumn": "Battery subsystem TMS environment BMU1 celsius"
         },
         "35": {
-            "required": true,
+            "required": false,
             "targetColumn": "Battery subsystem light alarms BMU1"
         },
         "36": {
-            "required": true,
+            "required": false,
             "targetColumn": "Battery subsystem fire alarms BMU1"
         },
         "37": {
-            "required": true,
+            "required": false,
             "targetColumn": "Battery subsystem flood alarms BMU1"
         },
         "38": {
-            "required": true,
+            "required": false,
             "targetColumn": "Battery subsystem EPO button BMU1"
         }
     }

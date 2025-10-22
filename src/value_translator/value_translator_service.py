@@ -1,4 +1,4 @@
-from pandas import Series
+from pandas import Series, isna
 
 
 class ValueTranslatorService:
@@ -19,7 +19,10 @@ class ValueTranslatorService:
 
         return results
 
-    def __translateCell(self, cellString: str) -> int | float:
+    def __translateCell(self, cellString: str) -> float | int | str | None:
+        if isna(cellString):
+            return cellString
+
         cellValue = int(cellString)
         try:
             return (cellValue + self.offset) * self.conversionFactor

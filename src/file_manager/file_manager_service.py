@@ -26,7 +26,7 @@ class FileManagerService:
 
     def getOriginalData(self, filePath: str) -> DataFrame:
         extension = Path(filePath).suffix.lower()
-        print(f"📂 Reading CSV/Excel file: {filePath} ...")
+        print(f"\n📂 Reading CSV/Excel file: {filePath} ...")
         start = time()
 
         if extension.endswith(".csv"):

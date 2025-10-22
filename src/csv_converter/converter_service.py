@@ -19,17 +19,16 @@ from value_translator.value_translator_service import ValueTranslatorService
 
 
 class ConverterService:
-    sbmuId: int = 0
-    nextSbmuStartRegister: int = 2 * CATL_SBMU_OFFSET_REGISTER
-    sbmuAddressOffset: int = 0
-    dataFrameList: list[DataFrame] = []
-    dataframeArrayId: int = 0
-    sbmuSheetName = "MBMU"
-    dateColumn = Series()
-    dateColumnHeader: str
-
     def __init__(self, driverConfig: DriverConfigurationDto):
         self.driverConfig = driverConfig
+        self.sbmuId: int = 0
+        self.nextSbmuStartRegister: int = 2 * CATL_SBMU_OFFSET_REGISTER
+        self.sbmuAddressOffset: int = 0
+        self.dataFrameList: list[DataFrame] = []
+        self.dataframeArrayId: int = 0
+        self.sbmuSheetName = "MBMU"
+        self.dateColumn = Series()
+        self.dateColumnHeader: str
         self.dataFrameList.append(DataFrame())
         self.dataFrameList[0].Name = "MBMU"
 
