@@ -39,9 +39,16 @@ def processCsvFile():
         print(f"❌ Invalid path: {inputPath}")
         return
 
-    processor = MultiFileProcessor(fileManagerInstance)
+    processor = MultiFileProcessor(fileManagerInstance, pauseOnError=True)
     processor.processFiles(fileList)
 
 
 if __name__ == "__main__":
-    processCsvFile()
+    try:
+        processCsvFile()
+    except KeyboardInterrupt:
+        input("\nPress Enter to exit...")
+    except Exception as e:
+        input("Press Enter to exit...")
+    except SystemExit:
+        raise

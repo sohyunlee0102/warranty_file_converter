@@ -44,7 +44,7 @@ class FileManagerService:
         fileName = Path(self.getFileName(csvPath))
         newFileName = fileName.stem + "_converted.xlsx"
         newFilePath = filePath.parent / newFileName
-        self.__validateFileName(str(newFileName))
+        self.__validateFileName(str(newFilePath))
 
         writingProgressBar = tqdm(
             total=len(dataframeList), desc="Writing Excel sheets", leave=False
@@ -75,8 +75,9 @@ class FileManagerService:
 
     def __validateOutputPath(self, outputPath: str) -> bool:
         directory = os.path.dirname(outputPath) or "."
-        if any(ch in outputPath for ch in INVALID_CHARS):
-            print(f"❌ Invalid character in filename: {outputPath}")
+        filenameOnly = os.path.basename(outputPath)
+        if any(ch in filenameOnly for ch in INVALID_CHARS):
+            print(f"❌ Invalid character in filename: {filenameOnly}")
             return False
         if not os.path.exists(directory):
             print(f"❌ Directory does not exist: {directory}")
