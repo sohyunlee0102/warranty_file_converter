@@ -2,8 +2,12 @@
     "timeMaxIntervalInSeconds": 6,
     "MBMU": {
         "DATE": {
-            "required": true,
-            "targetColumn": "Date timestamp"
+            "required": false,
+            "targetColumn": "Date timestamp",
+            "sourceAliases": [
+                "DATE",
+                "TIMESTAMP"
+            ]
         },
         "MBUSCOMM": {
             "targetColumn": "Modbus communication state"
@@ -464,7 +468,7 @@
             }
         },
         "403": {
-            "required": true,
+            "required": false,
             "targetColumn": "Warnings without degrees 3 (bitwise) SBMU",
             "alarmMap": {
                 "0": {
@@ -693,7 +697,7 @@
             "conversionFactor": 1
         },
         "450": {
-            "required": true,
+            "required": false,
             "targetColumn": "Door state (close 0/open 1) SBMU",
             "status": {
                 "0": "Close",
@@ -709,13 +713,13 @@
             }
         },
         "454": {
-            "required": true,
+            "required": false,
             "targetColumn": "Historical accumulated charging energy SBMU",
             "offset": 0,
             "conversionFactor": 0.1
         },
         "456": {
-            "required": true,
+            "required": false,
             "targetColumn": "Historical accumulated discharging energy SBMU",
             "offset": 0,
             "conversionFactor": 0.1

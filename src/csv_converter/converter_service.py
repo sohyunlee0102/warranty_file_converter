@@ -28,7 +28,7 @@ class ConverterService:
         self.dataframeArrayId: int = 0
         self.sbmuSheetName = "MBMU"
         self.dateColumn = Series()
-        self.dateColumnHeader: str
+        self.dateColumnHeader: str = ""
         self.dataFrameList.append(DataFrame())
         self.dataFrameList[0].Name = "MBMU"
 
@@ -66,7 +66,7 @@ class ConverterService:
         subColumnNameSeries = Series(
             [self.__getHexNameHeader(columnHeader)], index=[" "]
         )
-        if columnHeader == "DATE":
+        if columnHeader == "DATE" or columnHeader == "TIMESTAMP":
             if hasattr(columnInfo, "dt"):
                 try:
                     newColumn = concat(
