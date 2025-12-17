@@ -24,6 +24,7 @@ def _buildRegisterDescription(value: dict) -> RegisterDescriptionDto:
         return AlarmRegisterDescriptionDto(
             required=value.get("required", False),
             targetColumn=targetColumn,
+            sourceAliases=value.get("sourceAliases", None),
             alarmBitLength=value.get("alarmBitLength", 1),
             alarmMap=value.get("alarmMap", {}),
         )
@@ -31,6 +32,7 @@ def _buildRegisterDescription(value: dict) -> RegisterDescriptionDto:
         return ValueRegisterDescriptionDto(
             required=value.get("required", False),
             targetColumn=targetColumn,
+            sourceAliases=value.get("sourceAliases", None),
             offset=value.get("offset", 0),
             conversionFactor=value.get("conversionFactor", 1.0),
         )
@@ -39,6 +41,7 @@ def _buildRegisterDescription(value: dict) -> RegisterDescriptionDto:
         return StatusRegisterDescriptionDto(
             required=value.get("required", False),
             targetColumn=targetColumn,
+            sourceAliases=value.get("sourceAliases", None),
             status=value.get("status"),
             bitmask=value.get("bitmask"),
         )
@@ -46,6 +49,7 @@ def _buildRegisterDescription(value: dict) -> RegisterDescriptionDto:
     return RegisterDescriptionDto(
         required=value.get("required", False),
         targetColumn=targetColumn,
+        sourceAliases=value.get("sourceAliases", None),
     )
 
 
@@ -71,6 +75,20 @@ def getDriverConfiguration(driverModel: EBatteryModels) -> DriverConfigurationDt
     sbmu: dict[str, RegisterDescriptionDto] = {}
     for key, value in sbmuJsonData.items():
         sbmu[key] = _buildRegisterDescription(value)
+
+    def _applyAliases(mappingList: dict[str, RegisterDescriptionDto]):
+        additions: dict[str, RegisterDescriptionDto] = {}
+        for registerKey, registerDescription in mappingList.items():
+            aliases = getattr(registerDescription, "sourceAliases", None)
+            if aliases:
+                for alias in aliases:
+                    aliasKey = alias.upper()
+                    if aliasKey not in mappingList:
+                        additions[aliasKey] = registerDescription
+        mappingList.update(additions)
+
+    _applyAliases(mbmu)
+    _applyAliases(sbmu)
 
     return DriverConfigurationDto(
         timeMaxIntervalInSeconds=data.get("timeMaxIntervalInSeconds", 0),

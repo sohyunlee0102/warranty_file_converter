@@ -26,7 +26,7 @@ class FileManagerService:
 
     def getOriginalData(self, filePath: str) -> DataFrame:
         extension = Path(filePath).suffix.lower()
-        print(f"📂 Reading CSV/Excel file: {filePath} ...")
+        print(f"\n📂 Reading CSV/Excel file: {filePath} ...")
         start = time()
 
         if extension.endswith(".csv"):
@@ -40,15 +40,16 @@ class FileManagerService:
         return data
 
     def saveXlsx(self, csvPath, start, dataframeList):
-        filename = Path(self.getFileName(csvPath))
-        newFileName = filename.stem + "_converted.xlsx"
-
-        self.__validateFileName(newFileName)
+        filePath = Path(csvPath)
+        fileName = Path(self.getFileName(csvPath))
+        newFileName = fileName.stem + "_converted.xlsx"
+        newFilePath = filePath.parent / newFileName
+        self.__validateFileName(str(newFilePath))
 
         writingProgressBar = tqdm(
             total=len(dataframeList), desc="Writing Excel sheets", leave=False
         )
-        with ExcelWriter(newFileName) as writer:
+        with ExcelWriter(newFilePath) as writer:
             for dataFrame in dataframeList:
                 dataFrame.to_excel(writer, index=False, sheet_name=dataFrame.Name)
                 writingProgressBar.update(1)
@@ -74,8 +75,9 @@ class FileManagerService:
 
     def __validateOutputPath(self, outputPath: str) -> bool:
         directory = os.path.dirname(outputPath) or "."
-        if any(ch in outputPath for ch in INVALID_CHARS):
-            print(f"❌ Invalid character in filename: {outputPath}")
+        filenameOnly = os.path.basename(outputPath)
+        if any(ch in filenameOnly for ch in INVALID_CHARS):
+            print(f"❌ Invalid character in filename: {filenameOnly}")
             return False
         if not os.path.exists(directory):
             print(f"❌ Directory does not exist: {directory}")

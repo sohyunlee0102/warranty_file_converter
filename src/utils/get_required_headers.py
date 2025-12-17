@@ -10,12 +10,20 @@ def getRequiredHeaders(driverConfig: DriverConfigurationDto) -> RequiredHeadersD
     requiredMbmuHeaders: list[str] = []
     for key, value in mbmuDriverConfig.items():
         if isinstance(value, RegisterDescriptionDto) and value.required is True:
-            requiredMbmuHeaders.append(key.upper())
+            if getattr(value, "sourceAliases", None):
+                for alias in value.sourceAliases:
+                    requiredMbmuHeaders.append(alias.upper())
+            else:
+                requiredMbmuHeaders.append(key.upper())
 
     requiredSbmuHeaders: list[str] = []
     for key, value in sbmuDriverConfig.items():
         if isinstance(value, RegisterDescriptionDto) and value.required is True:
-            requiredSbmuHeaders.append(key.upper())
+            if getattr(value, "sourceAliases", None):
+                for alias in value.sourceAliases:
+                    requiredSbmuHeaders.append(alias.upper())
+            else:
+                requiredSbmuHeaders.append(key.upper())
 
     return RequiredHeadersDto(
         MBMU=requiredMbmuHeaders,

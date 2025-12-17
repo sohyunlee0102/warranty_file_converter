@@ -122,79 +122,53 @@
         },
         "20": {
             "required": true,
-            "targetColumn": "Battery system level voltage(outer-side)",
-            "offset": 0,
-            "conversionFactor": 0.1
+            "targetColumn": "Battery system level voltage(outer-side)"
         },
         "21": {
             "required": true,
-            "targetColumn": "Battery system current Charge/discharge current",
-            "offset": -20000,
-            "conversionFactor": 1
+            "targetColumn": "Battery system current Charge/discharge current"
         },
         "22": {
             "required": true,
-            "targetColumn": "Battery system current SOC data",
-            "offset": 0,
-            "conversionFactor": 0.1
+            "targetColumn": "Battery system current SOC data"
         },
         "23": {
             "required": true,
-            "targetColumn": "Battery system current SOH data",
-            "offset": 0,
-            "conversionFactor": 0.1
+            "targetColumn": "Battery system current SOH data"
         },
         "24": {
             "required": true,
-            "targetColumn": "Battery system current maximum cell voltage",
-            "offset": 0,
-            "conversionFactor": 0.001
+            "targetColumn": "Battery system current maximum cell voltage"
         },
         "25": {
             "required": true,
-            "targetColumn": "Battery system current minimum cell voltage",
-            "offset": 0,
-            "conversionFactor": 0.001
+            "targetColumn": "Battery system current minimum cell voltage"
         },
         "26": {
-            "targetColumn": "Battery system current average cell voltage",
-            "offset": 0,
-            "conversionFactor": 0.001
+            "targetColumn": "Battery system current average cell voltage"
         },
         "27": {
             "required": true,
-            "targetColumn": "Battery system current maximum cell temperature",
-            "offset": -50,
-            "conversionFactor": 1
+            "targetColumn": "Battery system current maximum cell temperature"
         },
         "28": {
             "required": true,
-            "targetColumn": "Battery system current minimum cell temperature",
-            "offset": -50,
-            "conversionFactor": 1
+            "targetColumn": "Battery system current minimum cell temperature"
         },
         "29": {
-            "targetColumn": "Battery system current average cell temperature",
-            "offset": -50,
-            "conversionFactor": 1
+            "targetColumn": "Battery system current average cell temperature"
         },
         "2A": {
             "required": true,
-            "targetColumn": "Battery system current allowed maximum charge current",
-            "offset": -20000,
-            "conversionFactor": 1
+            "targetColumn": "Battery system current allowed maximum charge current"
         },
         "2B": {
             "required": true,
-            "targetColumn": "Battery system current allowed maximum discharge current",
-            "offset": -20000,
-            "conversionFactor": 1
+            "targetColumn": "Battery system current allowed maximum discharge current"
         },
         "300": {
             "required": true,
-            "targetColumn": "BMS heartbeats 0-255, updated every 1s",
-            "offset": 0,
-            "conversionFactor": 1
+            "targetColumn": "BMS heartbeats 0-255, updated every 1s"
         },
         "301": {
             "required": false,
@@ -220,27 +194,21 @@
         },
         "304": {
             "required": true,
-            "targetColumn": "Number of HV connected subsystems",
-            "offset": 0,
-            "conversionFactor": 1
+            "targetColumn": "Number of HV connected subsystems"
         },
         "307": {
             "required": false,
             "targetColumn": "System remain charge energy",
-            "offset": 0,
             "conversionFactor": 0.1
         },
         "308": {
             "required": false,
             "targetColumn": "System remain discharge energy",
-            "offset": 0,
             "conversionFactor": 0.1
         },
         "380": {
             "required": false,
-            "targetColumn": "EMS heartbeat",
-            "offset": 0,
-            "conversionFactor": 1
+            "targetColumn": "EMS heartbeat"
         },
         "381": {
             "required": false,
@@ -262,33 +230,22 @@
         },
         "384": {
             "targetColumn": "EMS RTC year",
-            "offset": 0,
-            "conversionFactor": 1
+            "offset": 2000
         },
         "385": {
-            "targetColumn": "EMS RTC month",
-            "offset": 0,
-            "conversionFactor": 1
+            "targetColumn": "EMS RTC month"
         },
         "386": {
-            "targetColumn": "EMS RTC day",
-            "offset": 0,
-            "conversionFactor": 1
+            "targetColumn": "EMS RTC day"
         },
         "387": {
-            "targetColumn": "EMS RTC hour",
-            "offset": 0,
-            "conversionFactor": 1
+            "targetColumn": "EMS RTC hour"
         },
         "388": {
-            "targetColumn": "EMS RTC minute",
-            "offset": 0,
-            "conversionFactor": 1
+            "targetColumn": "EMS RTC minute"
         },
         "389": {
-            "targetColumn": "EMS RTC second",
-            "offset": 0,
-            "conversionFactor": 1
+            "targetColumn": "EMS RTC second"
         }
     },
     "SBMU": {
@@ -546,99 +503,66 @@
         },
         "420": {
             "required": true,
-            "targetColumn": "Battery subsystem dc outer side voltage SBMU",
-            "offset": 0,
-            "conversionFactor": 0.1
+            "targetColumn": "Battery subsystem dc outer side voltage SBMU"
         },
         "422": {
             "required": true,
-            "targetColumn": "Battery subsystem current charge/discharge current SBMU",
-            "offset": -2000,
-            "conversionFactor": 0.1
+            "targetColumn": "Battery subsystem current charge/discharge current SBMU"
         },
         "423": {
             "required": true,
-            "targetColumn": "Battery system current SOC SBMU",
-            "offset": 0,
-            "conversionFactor": 0.1
+            "targetColumn": "Battery system current SOC SBMU"
         },
         "424": {
             "required": true,
-            "targetColumn": "Battery system current SOH SBMU",
-            "offset": 0,
-            "conversionFactor": 0.1
+            "targetColumn": "Battery system current SOH SBMU"
         },
         "425": {
             "required": true,
-            "targetColumn": "Battery system current maximum single cell voltage SBMU",
-            "offset": 0,
-            "conversionFactor": 0.001
+            "targetColumn": "Battery system current maximum single cell voltage SBMU"
         },
         "426": {
             "required": true,
-            "targetColumn": "Battery system current minimum single cell voltage SBMU",
-            "offset": 0,
-            "conversionFactor": 0.001
+            "targetColumn": "Battery system current minimum single cell voltage SBMU"
         },
         "427": {
-            "targetColumn": "Battery system current average cell voltage SBMU",
-            "offset": 0,
-            "conversionFactor": 0.001
+            "targetColumn": "Battery system current average cell voltage SBMU"
         },
         "428": {
             "required": true,
-            "targetColumn": "Battery system current maximum temperature SBMU",
-            "offset": -50,
-            "conversionFactor": 1
+            "targetColumn": "Battery system current maximum temperature SBMU"
         },
         "429": {
             "required": true,
-            "targetColumn": "Battery system current minimum temperature SBMU",
-            "offset": -50,
-            "conversionFactor": 1
+            "targetColumn": "Battery system current minimum temperature SBMU"
         },
         "42A": {
-            "targetColumn": "Battery system current average temperature SBMU",
-            "offset": -50,
-            "conversionFactor": 1
+            "targetColumn": "Battery system current average temperature SBMU"
         },
         "42B": {
             "required": true,
-            "targetColumn": "Battery system current maximum allowed charge current SBMU",
-            "offset": -2000,
-            "conversionFactor": 0.1
+            "targetColumn": "Battery system current maximum allowed charge current SBMU"
         },
         "42C": {
             "required": true,
-            "targetColumn": "Battery system current maximum allowed discharge current SBMU",
-            "offset": -2000,
-            "conversionFactor": 0.1
+            "targetColumn": "Battery system current maximum allowed discharge current SBMU"
         },
         "430": {
-            "targetColumn": "Max single cell voltage position (LB: Cell# HB: Tank#) SBMU",
-            "offset": 0,
-            "conversionFactor": 1
+            "targetColumn": "Max single cell voltage position (LB: Cell# HB: Tank#) SBMU"
         },
         "431": {
-            "targetColumn": "Min single cell voltage position (LB: Cell# HB: Tank#) SBMU",
-            "offset": 0,
-            "conversionFactor": 1
+            "targetColumn": "Min single cell voltage position (LB: Cell# HB: Tank#) SBMU"
         },
         "432": {
-            "targetColumn": "Max single cell temperature position (module number) SBMU",
-            "offset": 0,
-            "conversionFactor": 1
+            "targetColumn": "Max single cell temperature position (module number) SBMU"
         },
         "433": {
-            "targetColumn": "Min single cell temperature position (module number) SBMU",
-            "offset": 0,
-            "conversionFactor": 1
+            "targetColumn": "Min single cell temperature position (module number) SBMU"
         },
         "437": {
             "required": false,
             "targetColumn": "Sum of cell voltage SBMU",
-            "offset": 0,
-            "conversionFactor": 0.001
+            "conversionFactor": 0.01
         },
         "448": {
             "required": true,
@@ -652,9 +576,7 @@
         },
         "449": {
             "required": true,
-            "targetColumn": "TMS temperature value set by BMS SBMU",
-            "offset": -50,
-            "conversionFactor": 1
+            "targetColumn": "TMS temperature value set by BMS SBMU"
         },
         "44A": {
             "required": true,
@@ -668,33 +590,23 @@
         },
         "44B": {
             "required": true,
-            "targetColumn": "Rack inlet(TMS outlet) temperature SBMU",
-            "offset": -50,
-            "conversionFactor": 1
+            "targetColumn": "Rack inlet(TMS outlet) temperature SBMU"
         },
         "44C": {
             "required": true,
-            "targetColumn": "Rack outlet(TMS intlet) temperature SBMU",
-            "offset": -50,
-            "conversionFactor": 1
+            "targetColumn": "Rack outlet(TMS intlet) temperature SBMU"
         },
         "44D": {
             "required": true,
-            "targetColumn": "TMS Environment temperature SBMU",
-            "offset": -50,
-            "conversionFactor": 1
+            "targetColumn": "TMS Environment temperature SBMU"
         },
         "44E": {
             "required": true,
-            "targetColumn": "TMS demand power SBMU",
-            "offset": 0,
-            "conversionFactor": 1
+            "targetColumn": "TMS demand power SBMU"
         },
         "44F": {
             "required": true,
-            "targetColumn": "TMS fault code SBMU",
-            "offset": 0,
-            "conversionFactor": 1
+            "targetColumn": "TMS fault code SBMU"
         },
         "450": {
             "required": false,
@@ -715,13 +627,11 @@
         "454": {
             "required": false,
             "targetColumn": "Historical accumulated charging energy SBMU",
-            "offset": 0,
             "conversionFactor": 0.1
         },
         "456": {
             "required": false,
             "targetColumn": "Historical accumulated discharging energy SBMU",
-            "offset": 0,
             "conversionFactor": 0.1
         }
     }

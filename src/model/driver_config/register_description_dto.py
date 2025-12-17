@@ -1,11 +1,12 @@
-from dataclasses import dataclass
-from typing import Optional
+from dataclasses import dataclass, field
+from typing import List, Optional
 
 
 @dataclass
 class RegisterDescriptionDto:
     required: bool
     targetColumn: str
+    sourceAliases: Optional[List[str]] = field(default=None, kw_only=True)
 
 
 @dataclass

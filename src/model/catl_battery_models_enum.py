@@ -6,3 +6,4 @@ class EBatteryModels(Enum):
     EnerOnePlus = 2
     EnerCPlus = 3
     Wolong = 4
+    EQL = 5
