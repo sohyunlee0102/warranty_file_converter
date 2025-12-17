@@ -8,4 +8,5 @@ DRIVER_CONFIG_PATHS: Final = {
     EBatteryModels.EnerOnePlus: getResourcePath("driver_configs/enerone_plus.json"),
     EBatteryModels.EnerCPlus: getResourcePath("driver_configs/enerc_plus.json"),
     EBatteryModels.Wolong: getResourcePath("driver_configs/wolong.json"),
+    EBatteryModels.EQL: getResourcePath("driver_configs/eql.json"),
 }
